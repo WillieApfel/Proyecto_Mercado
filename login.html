@@ -9,12 +9,12 @@
 	<div class="form-registro">
 		<h1>Wolmar</h1>
 		<h2>Iniciar sesión</h2>
-		<form>
-			<label for="correo usuario" >Nombre de usuario o correo electronico: <span class="*">*</span></label>
-			<input type="text" name="correo usuario">
+		<form action="login.php" method="post">
+			<label for="nombre_usuario" >Nombre de usuario o correo electronico: <span class="*">*</span></label>
+			<input type="text" name="nombre_usuario">
 
-			<label for="password" >Contraseña: <span class="*">*</span></label>
-			<input type="password" name="password">
+			<label for="clave" >Contraseña: <span class="*">*</span></label>
+			<input type="password" name="clave">
 
 			<input type="submit" name="logear" value="Iniciar sesión">
 
