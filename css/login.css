@@ -1,0 +1,113 @@
+@font-face{
+font-family:Raphtalia;
+src: url(../fonts/Raphtalia_DEMO.ttf);
+}
+
+@font-face{
+font-family:Alegreya;
+src: url(../fonts/Alegreya-Regular.ttf);
+}
+
+body {
+	font-family: 'Alegreya';
+	background-image: url(../multimedia/pocuefrutas.jpg);
+	background-repeat:no-repeat;
+	/*Fondo estatico*/
+	background-attachment:fixed;
+	background-position:center;
+	background-size: cover;
+}
+
+div {
+	width: 700px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Raphtalia';
+	font-weight: lighter;
+	font-size: 70px;
+	color: #24E8C5;
+	margin: 10px;
+}
+
+h2 {
+	font-weight: bold;
+}
+
+form {
+	background-color: rgba(255, 255, 255, .92);
+	border: 1px solid #ccc;
+	margin: 20px;
+	padding: 40px 60px;
+	border-radius: 6px;
+}
+
+label {
+	font-size: 16px;
+	display: block;
+	text-align: left;
+	font-weight: bold;
+}
+
+span {
+	color: red;
+}
+
+input {
+	margin-bottom: 20px;
+	width: 100%;
+	padding:10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+}
+
+input[type="text"], input[type="email"] {
+	border-radius: 6px;
+}
+
+input:focus {
+	border: 1px solid #1668c4;
+}
+
+input[type="submit"]{
+	display: block;
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bold;
+	height: 44px;
+	width: 130px;
+	background: #70C234;
+	color: #fff;
+	border: none;
+	border-radius: 20px;
+}
+
+input[type="submit"]:hover{
+	background: #94ED53;
+	cursor: pointer;
+}
+
+a {
+	font-size: 17px;
+	text-decoration:none;
+	color:#32CDCF;
+}
+
+a:hover{
+	color: #18699A;
+	text-decoration:underline;
+}
+
+a:active{
+	color: #26C1AC;
+}
+
+a:link {
+	color:#BC09C2;
+}
+
+a:visited {
+	color:#32CDCF;
+}
