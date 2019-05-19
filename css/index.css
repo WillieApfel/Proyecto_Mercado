@@ -53,7 +53,7 @@ header .menuP {
 header .menuP li {
 	display: inline-block;
 	margin: 20px 12px;
-	font-size: 24px;
+	font-size: 22px;
 }
 
 header .menuP a, h1 a{
@@ -70,6 +70,16 @@ header .menuP a:hover {
 header span {
 	margin-right: 28px;
 	margin-left: 6px;
+}
+
+.icon-user, .icon-exit {
+	margin-right: 10px;
+	font-size: 22px;
+}
+
+.icon-circle-down {
+	margin-left: 40px;
+	transition: all .1s;
 }
 
 .menu-bar{
@@ -98,6 +108,23 @@ header nav{
 header nav:hover {
 	width: 20%;
 	max-width: 300px;
+}
+
+header nav::-webkit-scrollbar {
+  width: 14px;
+}
+
+header nav::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+header nav::-webkit-scrollbar-thumb {
+  background: #414A36; 
+  border-radius: 5px;
+}
+
+header nav::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 header ul {
@@ -150,6 +177,10 @@ header nav a:hover {
 header nav li a:first-child:hover {
 	background-color: #2C3926;
 	color: #fff;
+}
+
+header nav li a:first-child:focus .icon-circle-down {
+	margin-left: 34px;
 }
 
 section {
