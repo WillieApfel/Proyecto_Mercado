@@ -11,7 +11,6 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<script src="jquery.js"></script>
 	<script src="abrir.js"></script>
-
 </head>
 <body>
 	<header>
@@ -19,9 +18,9 @@ session_start();
         
 		<ul class="menuP">
             <?php if (isset($_SESSION['usuario'])): ?>
-            <li><?php echo $_SESSION['usuario']?></li>
+            <li><span class="icon-user"></span><?php echo $_SESSION['usuario']?></li>
             <li>|</li>
-            <li><a href ="desconexion.php">Logout<?php ?></a></li>
+            <li><a href ="desconexion.php"><span class="icon-exit"></span>Cerrar Sesion<?php ?></a></li>
 			<li>|</li>
             <li><a href="#" class="icon-cart"></a></li>
             <?php else: ?>
@@ -40,7 +39,7 @@ session_start();
 
 			<ul class="menu">
 				<li class="supermercado">
-					<a href="#"><span class="icon-sun"></span>Supermercado</a>
+					<a href="#"><span class="icon-sun"></span>Supermercado<span class="icon-circle-down"></span></a>
 					<ul class="submenu">
 						<li>
 							<div class="barra"></div>
