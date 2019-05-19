@@ -24,8 +24,12 @@ src: url(../fonts/BreeSerif-Regular.ttf);
 }
 
 body {
-	background: #EEF7F2;
 	font-family: 'Alegreya';
+	background-repeat:no-repeat;
+	/*Fondo estatico*/
+	background-attachment:fixed;
+	background-position:center;
+	background-size: cover;
 	overflow-x: hidden;
 }
 
@@ -33,7 +37,7 @@ header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: #71CB05;
+	background: #69B0CD;
 	color: #fff;
 }
 
@@ -65,7 +69,7 @@ header .menuP a, h1 a{
 }
 
 header .menuP a:hover {
-	background: #5CA604;
+	background: #5898B4;
 	border-radius: 30px;
 }
 
@@ -100,8 +104,8 @@ header nav{
 	position: fixed;
 	width: 64px;
 	height: 100%;
-	background:#5CA604;
-	outline: 1px solid #5CA604;
+	background:#5898B4;
+	outline: 1px solid #5898B4;
 	transition: all .3s;
 	overflow-x: hidden;
     overflow-y: auto;
@@ -146,7 +150,7 @@ header nav > ul {
 }
 
 header nav li {
-	border-bottom: 1px solid #71CB05;
+	border-bottom: 1px solid #69B0CD;
 	transition: all .3s;
 }
 
@@ -177,7 +181,7 @@ header nav a:hover {
 }
 
 header nav li a:first-child:hover {
-	background-color: #2C3926;
+	background-color: #263739;
 	color: #fff;
 }
 
@@ -186,21 +190,115 @@ header nav li a:first-child:focus .icon-circle-down {
 }
 
 section {
+	background-image: url(../multimedia/pimientos.jpg);
+	background-size: contain;
+	background-attachment:fixed;
 	width: 93%;
 	margin: 110px 0 0 66px;
 	padding: 30px 20px;
-	background-color: #eee;
 }
 
-section h2 {
-	font-size: 34px;
-	font-variant: small-caps;
-	font-weight: 900;
+section h1 {
+	font-family: 'Raphtalia';
+	font-weight: lighter;
+	color: #5F31F8;
+	font-size: 70px;
 	text-align: center;
 }
 
+section h2 {
+	font-size: 20px;
+	margin:0 70px;
+	margin-bottom: 40px;
+	font-weight: normal;
+	text-align: center;
+}
+
+div#form-contacto {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+div.col-izquierda {
+	width: 47%;
+	float: left;
+}
+
+div.col-derecha {
+	width: 47%;
+	float: right;
+}
+
+#form-contacto form {
+	background-color: rgba(255, 255, 255, .92);
+	box-shadow: 0 0 10px #bbb;
+	border: 1px solid #ccc;
+	margin: 20px;
+	padding: 40px 50px;
+	border-radius: 6px;
+}
+
+#form-contacto label {
+	font-size: 16px;
+	display: block;
+	text-align: left;
+	font-weight: bold;
+}
+
+#form-contacto textarea {
+	width: 100%;
+	resize: vertical;
+	max-height: 300px;
+	min-height: 194px;
+}
+
+#form-contacto p {
+	clear: both;
+	margin-top: 24px;
+	font-size: 18px;
+}
+
+#form-contacto p span {
+	font-size: 22px;
+	margin-right: 10px;
+}
+
+input {
+	margin-bottom: 20px;
+	width: 100%;
+	padding:10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+	border-radius: 6px;
+}
+
+input:focus {
+	border: 1px solid #1668c4;
+}
+
+input[type="submit"]{
+	display: block;
+	margin: 20px 0;
+	font-size: 14px;
+	font-weight: bold;
+	height: 44px;
+	width: 100px;
+	background: #34A4C2;
+	color: #fff;
+	border: none;
+	border-radius: 20px;
+}
+
+input[type="submit"]:hover{
+	background: #53C1ED;
+	cursor: pointer;
+}
+
 footer {
-	background: #71CB05;
+	background: #69B0CD;
 	color:#fff;
 	z-index: 0;
 	padding: 10px 0px;
@@ -212,6 +310,6 @@ footer {
 }
 
 .activado > a{
-	background-color: #2C3926;
+	background-color: #263739;
 	color: #fff;
 }

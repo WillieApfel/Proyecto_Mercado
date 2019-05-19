@@ -10,7 +10,7 @@ src: url(../fonts/Alegreya-Regular.ttf);
 
 body {
 	font-family: 'Alegreya';
-	background-image: url(../multimedia/manzana-cesta.jpg);
+	background-image: url(../multimedia/tomates.jpg);
 	background-repeat:no-repeat;
 	/*Fondo estatico*/
 	background-attachment:fixed;
@@ -58,7 +58,7 @@ input {
 	border: 1px solid #ccc;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], input[type="password"] {
 	border-radius: 6px;
 }
 

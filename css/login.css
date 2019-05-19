@@ -63,7 +63,7 @@ input {
 	border: 1px solid #ccc;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], input[type="password"] {
 	border-radius: 6px;
 }
 
