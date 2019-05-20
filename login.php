@@ -16,7 +16,6 @@ $atributo = mysqli_fetch_array($resultado);
 if ($nombre_usuario==($atributo['nombre_usuario']) and $clave==($atributo['clave'])) {
     session_start();
     $_SESSION['usuario'] = $nombre_usuario;
-    $tutu = $_SESSION['usuario'];
     header("location:index.php");
 }else{
     echo "Das Cringe";
