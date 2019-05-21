@@ -31,6 +31,20 @@ h1 {
 	margin: 10px;
 }
 
+h1 a {
+	padding: 9px;
+	text-decoration: none;
+	transition: all .18s;
+}
+
+h1 a:visited {
+	color:#000;
+}
+
+h1 a:hover{
+	color: #FF2D4D;
+}
+
 form {
 	background-color: rgba(255, 255, 255, .92);
 	border: 1px solid #ccc;
@@ -84,25 +98,25 @@ input[type="submit"]:hover{
 	cursor: pointer;
 }
 
-a {
+form a {
 	font-size: 17px;
 	text-decoration:none;
 	color:#32CDCF;
 }
 
-a:hover{
+form a:hover{
 	color: #18699A;
 	text-decoration:underline;
 }
 
-a:active{
+form a:active{
 	color: #26C1AC;
 }
 
-a:link {
+form a:link {
 	color:#BC09C2;
 }
 
-a:visited {
+form a:visited {
 	color:#32CDCF;
 }

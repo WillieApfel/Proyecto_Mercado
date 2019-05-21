@@ -18,6 +18,7 @@ if(isset($_SESSION['usuario'])){
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/abrir.js"></script>
+	<script src="js/validar_contactanos.js"></script>
 </head>
 <body>
 	<header>
@@ -95,7 +96,7 @@ if(isset($_SESSION['usuario'])){
 		
 		<div id="form-contacto">
 
-			<form action="contacto_submit.php" method="post">
+			<form action="contacto_submit.php" method="post" onsubmit="return validar(this);">
 				<h1>Wolmar</h1>
 				<h2>Contacta a nuestro equipo de Servicio al Cliente para dar un comentario o hacer una 
 				pregunta acerca de nuestro sitio web</h2>
