@@ -11,10 +11,10 @@
 		<h2>Iniciar sesión</h2>
 		<form action="login.php" method="post">
 			<label for="nombre_usuario" >Nombre de usuario: <span class="*">*</span></label>
-			<input type="text" name="nombre_usuario">
+			<input type="text" name="nombre_usuario" maxlength="20" required>
 
 			<label for="clave" >Contraseña: <span class="*">*</span></label>
-			<input type="password" name="clave">
+			<input type="password" name="clave" maxlength="20" required>
 
 			<input type="submit" name="logear" value="Iniciar sesión">
 

@@ -9,8 +9,8 @@ session_start();
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
-	<script src="jquery.js"></script>
-	<script src="abrir.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/abrir.js"></script>
 </head>
 <body>
 	<header>

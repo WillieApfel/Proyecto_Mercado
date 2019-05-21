@@ -185,7 +185,7 @@ header nav li a:first-child:hover {
 	color: #fff;
 }
 
-header nav li a:first-child:focus .icon-circle-down {
+header nav li a:first-child:hover .icon-circle-down {
 	margin-left: 34px;
 }
 

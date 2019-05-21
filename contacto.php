@@ -1,23 +1,16 @@
 <?php
-include 'connect.php';
 session_start();
-if(isset($_SESSION['usuario'])){
-	$nombre_usuario = $_SESSION['usuario'];
-	$consulta = "SELECT * FROM persona WHERE nombre_usuario = '$nombre_usuario'";
-	$resultado = mysqli_query($conexion, $consulta);
-	$atributo = mysqli_fetch_array($resultado);
-}
-?>	
+?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Contacto - Wolmar</title>
-	<meta charset=utf-8" />
+	<title>Wolmar</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/contacto.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
-	<script src="jquery.js"></script>
-	<script src="abrir.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/abrir.js"></script>
 </head>
 <body>
 	<header>
@@ -25,7 +18,7 @@ if(isset($_SESSION['usuario'])){
         
 		<ul class="menuP">
             <?php if (isset($_SESSION['usuario'])): ?>
-            <li><span class="icon-user"></span><?php echo $_SESSION['usuario'];?></li>
+            <li><span class="icon-user"></span><?php echo $_SESSION['usuario']?></li>
             <li>|</li>
             <li><a href ="desconexion.php"><span class="icon-exit"></span>Cerrar Sesion<?php ?></a></li>
 			<li>|</li>
@@ -97,35 +90,27 @@ if(isset($_SESSION['usuario'])){
 
 			<form>
 				<h1>Wolmar</h1>
-				<h2>Contacta a nuestro equipo de Servicio al Cliente para dar un comentario o hacer una pregunta acerca de nuestro sitio web</h2>
+				<h2>Contacta a nuestro equipo de Servicio al Cliente para dar un comentario o hacer una 
+				pregunta acerca de nuestro sitio web</h2>
 				<div class="col-izquierda">
-					<?php if (isset($_SESSION['usuario'])): ?>
-						<label for="nombre">Nombre y Apellido:</label>
-						<label> <?php echo $atributo['nombres']," ",$atributo['apellidos'];?></label>
-						<label><br></label>
-						<label for="correo">Correo electrónico:</label>
-						<label for="correo"><?php echo $atributo['correo'];?></label>
-						<label><br></label>
-					<?php else: ?>	
-						<label for="nombre">Nombre y Apellido:</label>
-						<input type="text" name="nombre">
+					<label for="nombre">Nombre y Apellido</label>
+					<input type="text" id="nombre" name="nombre" maxlength="80" required>
 							
-						<label for="correo">Correo electrónico</label>
-						<input type="email" name="correo">
-					<?php endif; ?>
-
+					<label for="correo">Correo electrónico</label>
+					<input type="email" id="correo" name="correo" maxlength="60" required>
+							
 					<label for="telefono">Teléfono</label>
-					<input type="tel" name="telefono">
+					<input type="tel" id="telefono" name="telefono" maxlength="12" required>
 				</div>
 
 				<div class="col-derecha">
 					<label for="asunto">Mensaje</label>
-					<textarea rows="8" name="asunto" id="asunto"></textarea>
+					<textarea rows="8" name="asunto" id="asunto" required></textarea>
 					<input type="submit" name="enviar" value="Enviar">
 				</div>
 
 				<p><span class="icon-mail2"></span>Escríbenos mediante el formulario de Contacto</p>
-				<p><span class="icon-phone"></span>Llámanos 0412-4095885 | 0412-7696232</p>
+				<p><span class="icon-phone"></span>Llámanos 0412-7696232</p>
 
 			</form>
 		</div>
