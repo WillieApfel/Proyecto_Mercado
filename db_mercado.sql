@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-05-2019 a las 06:33:35
+-- Tiempo de generación: 21-05-2019 a las 23:42:47
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -36,16 +36,39 @@ CREATE TABLE `cliente` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `contacto`
+--
+
+CREATE TABLE `contacto` (
+  `id_mensaje` int(20) NOT NULL,
+  `nombres` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `correo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
+  `asunto` text COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `contacto`
+--
+
+INSERT INTO `contacto` (`id_mensaje`, `nombres`, `correo`, `telefono`, `asunto`) VALUES
+(6, 'Willie Antonio Manzano Rodríguez', 'williemr17@gmail.com', '04124095885', 'nada funciona'),
+(7, 'Willie Antonio Manzano Rodríguez', 'williemr17@gmail.com', '04124095885', 'Soy un Sadico'),
+(8, 'Carolina Rodriguez', 'mcarolr29@gmail.com', '04244406924', 'Muy buen servicio.');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `persona`
 --
 
 CREATE TABLE `persona` (
   `id_persona` int(8) NOT NULL,
-  `nombres` varchar(50) NOT NULL,
-  `apellidos` varchar(50) NOT NULL,
-  `correo` varchar(50) NOT NULL,
-  `nombre_usuario` varchar(20) NOT NULL,
-  `clave` varchar(30) NOT NULL
+  `nombres` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `apellidos` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
+  `correo` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `nombre_usuario` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `clave` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -68,20 +91,33 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
+-- Indices de la tabla `contacto`
+--
+ALTER TABLE `contacto`
+  ADD PRIMARY KEY (`id_mensaje`);
+
+--
 -- Indices de la tabla `persona`
 --
 ALTER TABLE `persona`
-  ADD PRIMARY KEY (`id_persona`);
+  ADD PRIMARY KEY (`id_persona`),
+  ADD UNIQUE KEY `nombre_usuario` (`nombre_usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
+-- AUTO_INCREMENT de la tabla `contacto`
+--
+ALTER TABLE `contacto`
+  MODIFY `id_mensaje` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `id_persona` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27877536;
+  MODIFY `id_persona` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27877561;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

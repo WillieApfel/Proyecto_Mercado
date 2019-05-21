@@ -1,5 +1,12 @@
 <?php
+include 'connect.php';
 session_start();
+if(isset($_SESSION['usuario'])){
+	$nombre_usuario = $_SESSION['usuario'];
+	$consulta = "SELECT * FROM persona WHERE nombre_usuario = '$nombre_usuario'";
+	$resultado = mysqli_query($conexion, $consulta);
+	$atributo = mysqli_fetch_array($resultado);
+}
 ?>
 
 <!DOCTYPE html>
@@ -88,24 +95,33 @@ session_start();
 		
 		<div id="form-contacto">
 
-			<form>
+			<form action="contacto_submit.php" method="post">
 				<h1>Wolmar</h1>
 				<h2>Contacta a nuestro equipo de Servicio al Cliente para dar un comentario o hacer una 
 				pregunta acerca de nuestro sitio web</h2>
 				<div class="col-izquierda">
-					<label for="nombre">Nombre y Apellido</label>
-					<input type="text" id="nombre" name="nombre" maxlength="80" required>
+				<?php if (isset($_SESSION['usuario'])): ?>
+						<label for="nombre">Nombre y Apellido:</label>
+						<label> <?php echo $atributo['nombres']," ",$atributo['apellidos'];?></label>
+						<label><br></label>
+						<label for="correo">Correo electrónico:</label>
+						<label for="correo"><?php echo $atributo['correo'];?></label>
+						<label><br></label>
+					<?php else: ?>	
+						<label for="nombre">Nombre y Apellido:</label>
+						<input type="text" id="nombre" name="nombre" maxlength="80" required>
 							
-					<label for="correo">Correo electrónico</label>
-					<input type="email" id="correo" name="correo" maxlength="60" required>
-							
+						<label for="correo">Correo electrónico</label>
+						<input type="email" id="correo" name="correo" maxlength="60" required>
+					<?php endif; ?>
+					
 					<label for="telefono">Teléfono</label>
 					<input type="tel" id="telefono" name="telefono" maxlength="12" required>
 				</div>
 
 				<div class="col-derecha">
 					<label for="asunto">Mensaje</label>
-					<textarea rows="8" name="asunto" id="asunto" required></textarea>
+					<textarea rows="8" name="asunto" id="asunto" maxlength="500" required></textarea>
 					<input type="submit" name="enviar" value="Enviar">
 				</div>
 
