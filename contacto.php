@@ -1,12 +1,19 @@
 <?php
+include 'connect.php';
 session_start();
-?>
+if(isset($_SESSION['usuario'])){
+	$nombre_usuario = $_SESSION['usuario'];
+	$consulta = "SELECT * FROM persona WHERE nombre_usuario = '$nombre_usuario'";
+	$resultado = mysqli_query($conexion, $consulta);
+	$atributo = mysqli_fetch_array($resultado);
+}
+?>	
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Wolmar</title>
-	<meta charset="utf-8">
+	<title>Contacto - Wolmar</title>
+	<meta charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="css/contacto.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<script src="jquery.js"></script>
@@ -18,7 +25,7 @@ session_start();
         
 		<ul class="menuP">
             <?php if (isset($_SESSION['usuario'])): ?>
-            <li><span class="icon-user"></span><?php echo $_SESSION['usuario']?></li>
+            <li><span class="icon-user"></span><?php echo $_SESSION['usuario'];?></li>
             <li>|</li>
             <li><a href ="desconexion.php"><span class="icon-exit"></span>Cerrar Sesion<?php ?></a></li>
 			<li>|</li>
@@ -92,12 +99,21 @@ session_start();
 				<h1>Wolmar</h1>
 				<h2>Contacta a nuestro equipo de Servicio al Cliente para dar un comentario o hacer una pregunta acerca de nuestro sitio web</h2>
 				<div class="col-izquierda">
-					<label for="nombre">Nombre y Apellido</label>
-					<input type="text" name="nombre">
+					<?php if (isset($_SESSION['usuario'])): ?>
+						<label for="nombre">Nombre y Apellido:</label>
+						<label> <?php echo $atributo['nombres']," ",$atributo['apellidos'];?></label>
+						<label><br></label>
+						<label for="correo">Correo electrónico:</label>
+						<label for="correo"><?php echo $atributo['correo'];?></label>
+						<label><br></label>
+					<?php else: ?>	
+						<label for="nombre">Nombre y Apellido:</label>
+						<input type="text" name="nombre">
 							
-					<label for="correo">Correo electrónico</label>
-					<input type="email" name="correo">
-							
+						<label for="correo">Correo electrónico</label>
+						<input type="email" name="correo">
+					<?php endif; ?>
+
 					<label for="telefono">Teléfono</label>
 					<input type="tel" name="telefono">
 				</div>
@@ -109,7 +125,7 @@ session_start();
 				</div>
 
 				<p><span class="icon-mail2"></span>Escríbenos mediante el formulario de Contacto</p>
-				<p><span class="icon-phone"></span>Llámanos 0412-7696232</p>
+				<p><span class="icon-phone"></span>Llámanos 0412-4095885 | 0412-7696232</p>
 
 			</form>
 		</div>
