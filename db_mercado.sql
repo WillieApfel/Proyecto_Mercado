@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-05-2019 a las 07:41:49
+-- Tiempo de generación: 22-05-2019 a las 09:44:18
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -88,7 +88,7 @@ INSERT INTO `persona` (`id_persona`, `nombres`, `apellidos`, `correo`, `nombre_u
 
 CREATE TABLE `producto` (
   `id_producto` int(20) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
   `tipo` varchar(20) NOT NULL,
   `imagen` varchar(100) NOT NULL,
   `precio` float NOT NULL
@@ -112,7 +112,34 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `tipo`, `imagen`, `precio`) VAL
 (11, 'Mortadela', 'Charcuteria', 'multimedia/img_productos/Charcuteria/mortadela.png', 5000),
 (12, 'Queso Amarillo', 'Charcuteria', 'multimedia/img_productos/Charcuteria/queso_amarillo.png', 20000),
 (13, 'Queso Blanco', 'Charcuteria', 'multimedia/img_productos/Charcuteria/queso_blanco.png', 10000),
-(14, 'Salchichas', 'Charcuteria', 'multimedia/img_productos/Charcuteria/salchichas.png', 10000);
+(14, 'Salchichas', 'Charcuteria', 'multimedia/img_productos/Charcuteria/salchichas.png', 10000),
+(15, 'Crema Dental', 'Cosmeticos', 'multimedia/img_productos/Cosmeticos/crema_dental.jpg', 5000),
+(16, 'Desodorante', 'Cosmeticos', 'multimedia/img_productos/Cosmeticos/desodorante.jpg', 5000),
+(17, 'Gel Antibacterial', 'Cosmeticos', 'multimedia/img_productos/Cosmeticos/gel_antibacterial.jpg', 10000),
+(18, 'Jabon Liquido', 'Cosmeticos', 'multimedia/img_productos/Cosmeticos/jabon_liquido.jpg', 5000),
+(19, 'Shampoo', 'Cosmeticos', 'multimedia/img_productos/Cosmeticos/shampoo.jpg', 10000),
+(20, 'Cambur', 'Frutas y Verduras', 'multimedia/img_productos/Frutas_Verduras/cambur.png', 2000),
+(21, 'Lechuga', 'Frutas y Verduras', 'multimedia/img_productos/Frutas_Verduras/lechuga.png', 5000),
+(22, 'Limon', 'Frutas y Verduras', 'multimedia/img_productos/Frutas_Verduras/limon.png', 4000),
+(23, 'Manzana', 'Frutas y Verduras', 'multimedia/img_productos/Frutas_Verduras/manzana.png', 8000),
+(24, 'Naranja', 'Frutas y Verduras', 'multimedia/img_productos/Frutas_Verduras/naranja.png', 5000),
+(25, 'Pera', 'Frutas y Verduras', 'multimedia/img_productos/Frutas_Verduras/pera.png', 6000),
+(26, 'Platano', 'Frutas y Verduras', 'multimedia/img_productos/Frutas_Verduras/platano_maduro.png', 2000),
+(27, 'Tomate', 'Frutas y Verduras', 'multimedia/img_productos/Frutas_Verduras/tomate.png', 5000),
+(28, 'Whiskey Jack Daniel\'s 0.75 lt.', 'Licores', 'multimedia/img_productos/Licores/jack_daniels.jpg', 10000),
+(29, 'Ron Macondo 0.70 lt.', 'Licores', 'multimedia/img_productos/Licores/macondo.jpg', 2000),
+(30, 'Ron Moruco 0.70 lt.', 'Licores', 'multimedia/img_productos/Licores/moruco.jpg', 2000),
+(31, 'Ron Santa Teresa 1.75 lt.', 'Licores', 'multimedia/img_productos/Licores/santa_teresa.jpg', 8000),
+(32, 'Ron Ventarron', 'Licores', 'multimedia/img_productos/Licores/ventarron.jpg', 2000),
+(33, 'Ambientador', 'Limpieza', 'multimedia/img_productos/Limpieza/ambientador.png', 5000),
+(34, 'Desinfectante', 'Limpieza', 'multimedia/img_productos/Limpieza/desinfectante.png', 5000),
+(35, 'Detergente', 'Limpieza', 'multimedia/img_productos/Limpieza/detergente.png', 5000),
+(36, 'Esponja', 'Limpieza', 'multimedia/img_productos/Limpieza/esponja.png', 5000),
+(37, 'Jabon Lavaplatos', 'Limpieza', 'multimedia/img_productos/Limpieza/lavaplatos.png', 4000),
+(38, 'Alpiste Vicone', 'Mascotas', 'multimedia/img_productos/Mascotas/alpiste.jpg', 2000),
+(39, 'Purina Catchow', 'Mascotas', 'multimedia/img_productos/Mascotas/catchow.jpg', 10000),
+(40, 'Purina Dogchow', 'Mascotas', 'multimedia/img_productos/Mascotas/dogchow.jpg', 10000),
+(41, 'Dogourmet', 'Mascotas', 'multimedia/img_productos/Mascotas/dogourmet.jpg', 10000);
 
 --
 -- Índices para tablas volcadas
@@ -163,7 +190,7 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_producto` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
