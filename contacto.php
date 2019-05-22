@@ -127,7 +127,7 @@ if(isset($_SESSION['usuario'])){
 				</div>
 
 				<p><span class="icon-mail2"></span>Escríbenos mediante el formulario de Contacto</p>
-				<p><span class="icon-phone"></span>Llámanos 0412-7696232</p>
+				<p><span class="icon-phone"></span>Llámanos 0412-7696232 | 0412-4095885</p>
 
 			</form>
 		</div>
