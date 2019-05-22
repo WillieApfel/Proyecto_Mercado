@@ -1,6 +1,40 @@
 <?php
 session_start();
+include 'connect.php';
+
+$consulta = "SELECT * FROM producto WHERE id_producto = 1";
+$resultado = mysqli_query($conexion, $consulta);
+$atributo = mysqli_fetch_array($resultado);
+$imagen1 = $atributo ['imagen'];
+$nombre1 = $atributo ['nombre'];
+$id1 = $atributo ['id_producto'];
+$precio1 = $atributo ['precio'];
+
+$consulta = "SELECT * FROM producto WHERE id_producto = 10";
+$resultado = mysqli_query($conexion, $consulta);
+$atributo = mysqli_fetch_array($resultado);
+$imagen2 = $atributo ['imagen'];
+$nombre2 = $atributo ['nombre'];
+$id2 = $atributo ['id_producto'];
+$precio2 = $atributo ['precio'];
+
+$consulta = "SELECT * FROM producto WHERE id_producto = 13";
+$resultado = mysqli_query($conexion, $consulta);
+$atributo = mysqli_fetch_array($resultado);
+$imagen3 = $atributo ['imagen'];
+$nombre3 = $atributo ['nombre'];
+$id3 = $atributo ['id_producto'];
+$precio3 = $atributo ['precio'];
+
+$consulta = "SELECT * FROM producto WHERE id_producto = 5";
+$resultado = mysqli_query($conexion, $consulta);
+$atributo = mysqli_fetch_array($resultado);
+$imagen4 = $atributo ['imagen'];
+$nombre4 = $atributo ['nombre'];
+$id4 = $atributo ['id_producto'];
+$precio4 = $atributo ['precio'];
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -49,16 +83,13 @@ session_start();
 							<a href="#">Frutas y Verduras</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Carnes</a></li>
-						<li>
-							<div class="barra"></div>
 							<a href="#">Charcuteria</a></li>
 						<li>
 							<div class="barra"></div>
 							<a href="#">Licores</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Cuidado Personal</a></li>
+							<a href="#">Cuidado e Higiene</a></li>
 						<li>
 							<div class="barra"></div>
 							<a href="#">Mascotas</a></li>
@@ -98,18 +129,47 @@ session_start();
 		
 		<div class="contenido">
 		<h2>Productos Destacados</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+			<div class="productos-destacados">
+				<center>
+					
+					<div class="producto">
+					<a href="detalles.php?=<?php echo $id3?>">
+						<img id="aceite" src="<?php echo $imagen1?>"></a><br>
+					<span class="nombre"><a href="detalles.php?=<?php echo $id3?>">
+						<?php echo "$nombre1"?></a></span><br>
+					<span><strong>Precio: </strong><?php echo "$precio1"?> Bs.S</span><br>
+					<a href="detalles.php?=<?php echo $id1?>">Ver producto</a><br>
+					</div>
+					
+					<div class="producto">
+					<a href="detalles.php?=<?php echo $id3?>">
+						<img id="jamon" src="<?php echo $imagen2?>"></a><br>
+					<span class="nombre"><a href="detalles.php?=<?php echo $id3?>">
+						<?php echo "$nombre2"?></a></span><br>
+					<span><strong>Precio: </strong><?php echo "$precio2"?> Bs.S</span><br>
+					<a href="detalles.php?=<?php echo $id2?>">Ver producto</a><br>
+					</div>
+					
+					<div class="producto">
+					<a href="detalles.php?=<?php echo $id3?>">
+						<img id="queso" src="<?php echo $imagen3?>"></a><br>
+					<span class="nombre"><a href="detalles.php?=<?php echo $id3?>">
+						<?php echo "$nombre3"?></a></span><br>
+					<span><strong>Precio: </strong><?php echo "$precio3"?> Bs.S</span><br>
+					<a href="detalles.php?=<?php echo $id3?>">Ver producto</a><br>
+					</div>
+					
+					<div class="producto">
+					<a href="detalles.php?=<?php echo $id3?>">
+						<img id="cafe" src="<?php echo $imagen4?>"></a><br>
+					<span class="nombre"><a href="detalles.php?=<?php echo $id3?>">
+						<?php echo "$nombre4"?></a></span><br>
+					<span><strong>Precio: </strong><?php echo "$precio4"?> Bs.S</span><br>
+					<a href="detalles.php?=<?php echo $id4?>">Ver producto</a><br>
+					</div>
+				</center>
+			</div>
 
 		<h2>Productos en Oferta</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
