@@ -185,17 +185,63 @@ header nav li a:focus .icon-circle-down {
 	margin-left: 34px;
 }
 
-section {
-	width: 93%;
+.slider {
+	width: 100%;
 	margin: 110px 0 0 66px;
+	overflow: hidden;
+}
+
+.slider ul {
+	display: flex;
+	padding: 0;
+	width: 600%;
+
+	animation: cambio 30s infinite;
+	animation-direction: alternate;
+}
+
+.slider li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider img {
+	width: 100%;
+	height: 350px;
+}
+
+@keyframes cambio {
+	0% { margin-left: 0; }
+	12.5% { margin-left: 0; }
+
+	17.5% { margin-left: -100%; }
+	30% { margin-left: -100%; }
+
+	35% { margin-left: -200%; }
+	47.5% { margin-left: -200%; }
+
+	52.5% { margin-left: -300%; }
+	65% { margin-left: -300%; }
+
+	70% { margin-left: -400%; }
+	82.5% { margin-left: -400%; }
+
+	87.5% { margin-left: -500%; }
+	100% { margin-left: -500%; }
+}
+
+div.contenido {
+	width: 93%;
+	margin-left: 66px;
 	padding: 30px 20px;
 	background-color: #eee;
 }
 
-section h2 {
+div.contenido h2 {
 	font-size: 34px;
 	font-variant: small-caps;
 	font-weight: 900;
+	margin-bottom: 30px;
 	text-align: center;
 }
 

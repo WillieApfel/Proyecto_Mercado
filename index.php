@@ -84,6 +84,19 @@ session_start();
 	</header>
 
 	<section class="main">
+
+		<div class="slider">
+			<ul>
+				<li><img src="multimedia/super.jpg" alt=""></li>
+				<li><img src="multimedia/varios.jpg" alt=""></li>
+				<li><img src="multimedia/alcohol.jpg" alt=""></li>
+				<li><img src="multimedia/fruteria.jpg" alt=""></li>
+				<li><img src="multimedia/sonic.jpg" alt=""></li>
+				<li><img src="multimedia/limpieza.jpg" alt=""></li>
+			</ul>
+		</div>
+		
+		<div class="contenido">
 		<h2>Productos Destacados</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -125,7 +138,7 @@ session_start();
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		
+		</div>
 	</section>
 
 	<footer>
