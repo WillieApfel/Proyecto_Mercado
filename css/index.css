@@ -186,7 +186,7 @@ header nav li a:focus .icon-circle-down {
 
 .slider {
 	width: 95%;
-	margin: 110px 0 0 65px;
+	margin: 109px 0 0 65px;
 	overflow: hidden;
 }
 
@@ -251,13 +251,13 @@ div.productos-destacados {
 div.producto {
 	display: inline-block;
 	margin: 10px 30px;
+	padding-bottom: 10px;
 	font-size: 18px;
 	width: 19%;
-	box-sizing: border-box;
+	border: 1px solid rgba(255,255,255,0);
 }
 
 div.producto:hover {
-	margin-top: 9px;
 	border: 1px solid #2DFF73;
 }
 

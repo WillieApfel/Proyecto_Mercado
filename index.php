@@ -2,39 +2,19 @@
 session_start();
 include 'connect.php';
 
-$consulta = "SELECT * FROM producto WHERE id_producto = 1";
-$resultado = mysqli_query($conexion, $consulta);
-$atributo = mysqli_fetch_array($resultado);
-$imagen1 = $atributo ['imagen'];
-$nombre1 = $atributo ['nombre'];
-$id1 = $atributo ['id_producto'];
-$precio1 = $atributo ['precio'];
+$consulta_tablas = mysqli_query($conexion,"SELECT * from producto");
+$cantidad_tablas = mysqli_num_rows($consulta_tablas);
 
-$consulta = "SELECT * FROM producto WHERE id_producto = 10";
+for ($i=1; $i <= $cantidad_tablas; $i++) { 
+$consulta = "SELECT * FROM producto WHERE id_producto = $i";
 $resultado = mysqli_query($conexion, $consulta);
 $atributo = mysqli_fetch_array($resultado);
-$imagen2 = $atributo ['imagen'];
-$nombre2 = $atributo ['nombre'];
-$id2 = $atributo ['id_producto'];
-$precio2 = $atributo ['precio'];
-
-$consulta = "SELECT * FROM producto WHERE id_producto = 13";
-$resultado = mysqli_query($conexion, $consulta);
-$atributo = mysqli_fetch_array($resultado);
-$imagen3 = $atributo ['imagen'];
-$nombre3 = $atributo ['nombre'];
-$id3 = $atributo ['id_producto'];
-$precio3 = $atributo ['precio'];
-
-$consulta = "SELECT * FROM producto WHERE id_producto = 5";
-$resultado = mysqli_query($conexion, $consulta);
-$atributo = mysqli_fetch_array($resultado);
-$imagen4 = $atributo ['imagen'];
-$nombre4 = $atributo ['nombre'];
-$id4 = $atributo ['id_producto'];
-$precio4 = $atributo ['precio'];
+$imagen[$i] = $atributo ['imagen'];
+$nombre[$i] = $atributo ['nombre'];
+$id[$i] = $atributo ['id_producto'];
+$precio[$i] = $atributo ['precio'];
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -118,8 +98,8 @@ $precio4 = $atributo ['precio'];
 
 		<div class="slider">
 			<ul>
-				<li><img src="multimedia/super.jpg" alt=""></li>
 				<li><img src="multimedia/varios.jpg" alt=""></li>
+				<li><img src="multimedia/super.jpg" alt=""></li>
 				<li><img src="multimedia/alcohol.jpg" alt=""></li>
 				<li><img src="multimedia/fruteria.jpg" alt=""></li>
 				<li><img src="multimedia/sonic.jpg" alt=""></li>
@@ -134,39 +114,39 @@ $precio4 = $atributo ['precio'];
 				<center>
 					
 					<div class="producto">
-					<a href="detalles.php?=<?php echo $id3?>">
-						<img id="aceite" src="<?php echo $imagen1?>"></a><br>
-					<span class="nombre"><a href="detalles.php?=<?php echo $id3?>">
-						<?php echo "$nombre1"?></a></span><br>
-					<span><strong>Precio: </strong><?php echo "$precio1"?> Bs.S</span><br>
-					<a href="detalles.php?=<?php echo $id1?>">Ver producto</a><br>
+					<a href="detalles.php?=<?php echo $id[1]?>">
+						<img id="aceite" src="<?php echo $imagen[1]?>"></a><br>
+					<span class="nombre"><a href="detalles.php?=<?php echo $id[1]?>">
+						<?php echo "$nombre[1]"?></a></span><br>
+					<span><strong>Precio: </strong><?php echo "$precio[1]"?> Bs.S</span><br>
+					<a href="detalles.php?=<?php echo $id[1]?>">Ver producto</a><br>
 					</div>
 					
 					<div class="producto">
-					<a href="detalles.php?=<?php echo $id3?>">
-						<img id="jamon" src="<?php echo $imagen2?>"></a><br>
-					<span class="nombre"><a href="detalles.php?=<?php echo $id3?>">
-						<?php echo "$nombre2"?></a></span><br>
-					<span><strong>Precio: </strong><?php echo "$precio2"?> Bs.S</span><br>
-					<a href="detalles.php?=<?php echo $id2?>">Ver producto</a><br>
+					<a href="detalles.php?=<?php echo $id[10]?>">
+						<img id="jamon" src="<?php echo $imagen[10]?>"></a><br>
+					<span class="nombre"><a href="detalles.php?=<?php echo $id[10]?>">
+						<?php echo "$nombre[10]"?></a></span><br>
+					<span><strong>Precio: </strong><?php echo "$precio[10]"?> Bs.S</span><br>
+					<a href="detalles.php?=<?php echo $id[10]?>">Ver producto</a><br>
 					</div>
 					
 					<div class="producto">
-					<a href="detalles.php?=<?php echo $id3?>">
-						<img id="queso" src="<?php echo $imagen3?>"></a><br>
-					<span class="nombre"><a href="detalles.php?=<?php echo $id3?>">
-						<?php echo "$nombre3"?></a></span><br>
-					<span><strong>Precio: </strong><?php echo "$precio3"?> Bs.S</span><br>
-					<a href="detalles.php?=<?php echo $id3?>">Ver producto</a><br>
+					<a href="detalles.php?=<?php echo $id[13]?>">
+						<img id="queso" src="<?php echo $imagen[13]?>"></a><br>
+					<span class="nombre"><a href="detalles.php?=<?php echo $id[13]?>">
+						<?php echo "$nombre[13]"?></a></span><br>
+					<span><strong>Precio: </strong><?php echo "$precio[13]"?> Bs.S</span><br>
+					<a href="detalles.php?=<?php echo $id[13]?>">Ver producto</a><br>
 					</div>
 					
 					<div class="producto">
-					<a href="detalles.php?=<?php echo $id3?>">
-						<img id="cafe" src="<?php echo $imagen4?>"></a><br>
-					<span class="nombre"><a href="detalles.php?=<?php echo $id3?>">
-						<?php echo "$nombre4"?></a></span><br>
-					<span><strong>Precio: </strong><?php echo "$precio4"?> Bs.S</span><br>
-					<a href="detalles.php?=<?php echo $id4?>">Ver producto</a><br>
+					<a href="detalles.php?=<?php echo $id[5]?>">
+						<img id="cafe" src="<?php echo $imagen[5]?>"></a><br>
+					<span class="nombre"><a href="detalles.php?=<?php echo $id[5]?>">
+						<?php echo "$nombre[5]"?></a></span><br>
+					<span><strong>Precio: </strong><?php echo "$precio[5]"?> Bs.S</span><br>
+					<a href="detalles.php?=<?php echo $id[5]?>">Ver producto</a><br>
 					</div>
 				</center>
 			</div>
