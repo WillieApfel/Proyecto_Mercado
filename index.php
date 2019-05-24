@@ -23,6 +23,7 @@ $precio[$i] = $atributo ['precio'];
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link href="https://fonts.googleapis.com/css?family=Caveat|Gochi+Hand|Patrick+Hand|Permanent+Marker&display=swap" rel="stylesheet">
 	<script src="js/jquery.js"></script>
 	<script src="js/abrir.js"></script>
 </head>

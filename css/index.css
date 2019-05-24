@@ -18,6 +18,16 @@ font-family:BreeSerif;
 src: url(../fonts/BreeSerif-Regular.ttf);
 }
 
+@font-face{
+font-family:BukhariScript;
+src: url(../fonts/BukhariScript-Regular.ttf);
+}
+
+@font-face{
+font-family:MachineScript;
+src: url(../fonts/MachineScript.ttf);
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -43,6 +53,7 @@ header h1 {
 	display: inline-block;
 	text-align: left;
 	margin: 10px;
+	text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
 }
 
 header .menuP {
@@ -236,11 +247,14 @@ div.contenido {
 }
 
 div.contenido h2 {
-	font-size: 34px;
+	font-family: 'MachineScript', cursive;
+	font-size: 28px;
 	font-variant: small-caps;
 	font-weight: 900;
 	margin-bottom: 30px;
 	text-align: center;
+	color: #fff;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, -4px 3px 0 #000;
 }
 
 div.productos-destacados {
