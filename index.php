@@ -118,7 +118,7 @@ $precio[$i] = $atributo ['precio'];
 						<img class="alto" src="<?php echo $imagen[1]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?=<?php echo $id[1]?>">
 						<?php echo "$nombre[1]"?></a></span><br>
-					<span class="precio"><strong>Precio: </strong><?php echo $precio[1]?> Bs.S</span><br>
+					<span><strong>Precio: </strong><?php echo $precio[1]?> Bs.S</span><br>
 					<a href="detalles.php?=<?php echo $id[1]?>" class="ver">Ver producto</a><br>
 					</div>
 					
@@ -127,7 +127,7 @@ $precio[$i] = $atributo ['precio'];
 						<img class="ancha" src="<?php echo $imagen[10]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?=<?php echo $id[10]?>">
 						<?php echo "$nombre[10]"?></a></span><br>
-					<span class="precio"><strong>Precio: </strong><?php echo $precio[10]?> Bs.S</span><br>
+					<span><strong>Precio: </strong><?php echo $precio[10]?> Bs.S</span><br>
 					<a href="detalles.php?=<?php echo $id[10]?>" class="ver">Ver producto</a><br>
 					</div>
 					
@@ -136,7 +136,7 @@ $precio[$i] = $atributo ['precio'];
 						<img class="cuadrado" src="<?php echo $imagen[13]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?=<?php echo $id[13]?>">
 						<?php echo "$nombre[13]"?></a></span><br>
-					<span class="precio"><strong>Precio: </strong><?php echo $precio[13]?> Bs.S</span><br>
+					<span><strong>Precio: </strong><?php echo $precio[13]?> Bs.S</span><br>
 					<a href="detalles.php?=<?php echo $id[13]?>" class="ver">Ver producto</a><br>
 					</div>
 					
@@ -145,7 +145,7 @@ $precio[$i] = $atributo ['precio'];
 						<img class="alto" src="<?php echo $imagen[5]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?=<?php echo $id[5]?>">
 						<?php echo "$nombre[5]"?></a></span><br>
-					<span class="precio"><strong>Precio: </strong><?php echo $precio[5]?> Bs.S</span><br>
+					<span><strong>Precio: </strong><?php echo $precio[5]?> Bs.S</span><br>
 					<a href="detalles.php?=<?php echo $id[5]?>" class="ver">Ver producto</a><br>
 					</div>
 				</center>
@@ -161,7 +161,8 @@ $precio[$i] = $atributo ['precio'];
 						<img class="alto" src="<?php echo $imagen[3]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?=<?php echo $id[3]?>">
 						<?php echo "$nombre[3]"?></a></span><br>
-					<span class="precio"><strong>Precio: </strong><?php echo $precio[3]/2?> Bs.S</span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[3]?> Bs.S</del></span><br>
+					<span><?php echo $precio[3]/2?> Bs.S</span><br>
 					<a href="detalles.php?=<?php echo $id[3]?>" class="ver">Ver producto</a><br>
 					</div>
 					
@@ -170,7 +171,8 @@ $precio[$i] = $atributo ['precio'];
 						<img class="ancha" src="<?php echo $imagen[20]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?=<?php echo $id[20]?>">
 						<?php echo "$nombre[20]"?></a></span><br>
-					<span class="precio"><strong>Precio: </strong><?php echo $precio[20]/2?> Bs.S</span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[20]?> Bs.S</del></span><br>
+					<span><?php echo $precio[20]/2?> Bs.S</span><br>
 					<a href="detalles.php?=<?php echo $id[20]?>" class="ver">Ver producto</a><br>
 					</div>
 					
@@ -179,7 +181,8 @@ $precio[$i] = $atributo ['precio'];
 						<img class="grande" src="<?php echo $imagen[41]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?=<?php echo $id[41]?>">
 						<?php echo "$nombre[41]"?></a></span><br>
-					<span class="precio"><strong>Precio: </strong><?php echo $precio[41]/2?> Bs.S</span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[41]?> Bs.S</del></span><br>
+					<span><?php echo $precio[41]/2?> Bs.S</span><br>
 					<a href="detalles.php?=<?php echo $id[41]?>" class="ver">Ver producto</a><br>
 					</div>
 					
@@ -188,7 +191,8 @@ $precio[$i] = $atributo ['precio'];
 						<img class="alto" src="<?php echo $imagen[34]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?=<?php echo $id[34]?>">
 						<?php echo "$nombre[34]"?></a></span><br>
-					<span class="precio"><strong>Precio: </strong><?php echo $precio[34]/2?> Bs.S</span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[34]?> Bs.S</del></span><br>
+					<span><?php echo $precio[34]/2?> Bs.S</span><br>
 					<a href="detalles.php?=<?php echo $id[34]?>" class="ver">Ver producto</a><br>
 					</div>
 				</center>
@@ -204,7 +208,7 @@ $precio[$i] = $atributo ['precio'];
 						<img class="alto" src="<?php echo $imagen[31]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?=<?php echo $id[31]?>">
 						<?php echo "$nombre[31]"?></a></span><br>
-					<span class="precio"><strong>Precio: </strong><?php echo $precio[31]?> Bs.S</span><br>
+					<span><strong>Precio: </strong><?php echo $precio[31]?> Bs.S</span><br>
 					<a href="detalles.php?=<?php echo $id[31]?>" class="ver">Ver producto</a><br>
 					</div>
 					
@@ -213,7 +217,7 @@ $precio[$i] = $atributo ['precio'];
 						<img class="alto" src="<?php echo $imagen[32]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?=<?php echo $id[32]?>">
 						<?php echo "$nombre[32]"?></a></span><br>
-					<span class="precio"><strong>Precio: </strong><?php echo $precio[32]?> Bs.S</span><br>
+					<span><strong>Precio: </strong><?php echo $precio[32]?> Bs.S</span><br>
 					<a href="detalles.php?=<?php echo $id[32]?>" class="ver">Ver producto</a><br>
 					</div>
 				</center>
