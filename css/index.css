@@ -42,7 +42,7 @@ header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: #71CB05;
+	background: #497FEB;
 	color: #fff;
 }
 
@@ -58,14 +58,14 @@ header h1 {
 
 header .menuP {
 	display: inline-block;
-	margin-top: 17px;
+	margin-top: 22px;
 	float: right;
 }
 
 header .menuP li {
 	display: inline-block;
-	margin: 20px 12px;
-	font-size: 22px;
+	margin: 20px 10px;
+	font-size: 18px;
 }
 
 header .menuP a, h1 a{
@@ -75,7 +75,7 @@ header .menuP a, h1 a{
 }
 
 header .menuP a:hover {
-	background: #5CA604;
+	background: #193C83;
 	border-radius: 30px;
 }
 
@@ -84,9 +84,15 @@ header span {
 	margin-left: 6px;
 }
 
+header li#carrito {
+	margin-right: 24px;
+	margin-left: 6px;
+	font-size: 20px;
+}
+
 .icon-user, .icon-exit {
 	margin-right: 10px;
-	font-size: 22px;
+	font-size: 20px;
 }
 
 .icon-circle-down {
@@ -110,8 +116,8 @@ header nav{
 	position: fixed;
 	width: 64px;
 	height: 100%;
-	background:#5CA604;
-	outline: 1px solid #5CA604;
+	background:#193C83;
+	outline: 1px solid #193C83;
 	transition: all .3s;
 	overflow-x: hidden;
     overflow-y: auto;
@@ -144,7 +150,7 @@ header ul {
 }
 
 header nav > ul {
-	padding-bottom: 110px;
+	padding-bottom: 120px;
 }
 
 .barra {
@@ -156,7 +162,7 @@ header nav > ul {
 }
 
 header nav li {
-	border-bottom: 1px solid #71CB05;
+	border-bottom: 1px solid #497FEB;
 	transition: all .3s;
 }
 
@@ -251,13 +257,13 @@ div.contenido h2 {
 	font-size: 28px;
 	font-variant: small-caps;
 	font-weight: 900;
-	margin-bottom: 30px;
+	margin-bottom: 26px;
 	text-align: center;
-	color: #fff;
+	color: #E2F7EA;
 	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, -4px 3px 0 #000;
 }
 
-div.productos-destacados {
+div.productos {
 	box-sizing: border-box;
 	margin-bottom: 50px;
 }
@@ -265,35 +271,37 @@ div.productos-destacados {
 div.producto {
 	display: inline-block;
 	margin: 10px 30px;
-	padding-bottom: 10px;
 	font-size: 18px;
 	width: 19%;
 	border: 1px solid rgba(255,255,255,0);
 }
 
 div.producto:hover {
-	border: 1px solid #2DFF73;
+	border: 1px solid #BECFF2;
 }
 
-div.producto img#aceite {
+div.producto img {
+	width:90%;
+}
+
+div.producto img.alto {
 	height: 250px;
-	width: 90px;
+	width: 110px;
 }
 
-div.producto img#jamon {
-	width: 100%;
-	height: 150px;
-	padding-top: 100px;
+div.producto img.ancha {
+	height: 170px;
+	padding-top: 90px;
 }
 
-div.producto img#cafe {
-	width: 120px;
-	height: 250px;
-}
-
-div.producto img#queso {
+div.producto img.cuadrado {
 	width: 90%;
 	padding-top: 40px;
+}
+
+div.producto img.grande {
+	height: 250px;
+	width: 160px;
 }
 
 div.producto .nombre{
@@ -314,8 +322,23 @@ div.producto a:hover{
 	color: #778E7B;
 }
 
+div.producto a.ver {
+	background-color: #2851A4;
+	color: #fff;
+	font-size: 16px;
+	display: block;
+	margin-top: 18px;
+	width: 60%;
+	border-radius: 2px;
+	padding: 3px 0;
+}
+
+div.producto a.ver:hover{
+	background-color: #6387D3;
+}
+
 footer {
-	background: #71CB05;
+	background: #497FEB;
 	color:#fff;
 	z-index: 0;
 	width: 112%;

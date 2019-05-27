@@ -37,7 +37,7 @@ header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: #69B0CD;
+	background: #497FEB;
 	color: #fff;
 }
 
@@ -48,18 +48,19 @@ header h1 {
 	display: inline-block;
 	text-align: left;
 	margin: 10px;
+	text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
 }
 
 header .menuP {
 	display: inline-block;
-	margin-top: 17px;
+	margin-top: 22px;
 	float: right;
 }
 
 header .menuP li {
 	display: inline-block;
-	margin: 20px 12px;
-	font-size: 22px;
+	margin: 20px 10px;
+	font-size: 18px;
 }
 
 header .menuP a, h1 a{
@@ -69,7 +70,7 @@ header .menuP a, h1 a{
 }
 
 header .menuP a:hover {
-	background: #5898B4;
+	background: #193C83;
 	border-radius: 30px;
 }
 
@@ -78,9 +79,15 @@ header span {
 	margin-left: 6px;
 }
 
+header li#carrito {
+	margin-right: 24px;
+	margin-left: 6px;
+	font-size: 20px;
+}
+
 .icon-user, .icon-exit {
 	margin-right: 10px;
-	font-size: 22px;
+	font-size: 20px;
 }
 
 .icon-circle-down {
@@ -104,8 +111,8 @@ header nav{
 	position: fixed;
 	width: 64px;
 	height: 100%;
-	background:#5898B4;
-	outline: 1px solid #5898B4;
+	background:#193C83;
+	outline: 1px solid #193C83;
 	transition: all .3s;
 	overflow-x: hidden;
     overflow-y: auto;
@@ -138,7 +145,7 @@ header ul {
 }
 
 header nav > ul {
-	padding-bottom: 110px;
+	padding-bottom: 120px;
 }
 
 .barra {
@@ -150,7 +157,7 @@ header nav > ul {
 }
 
 header nav li {
-	border-bottom: 1px solid #69B0CD;
+	border-bottom: 1px solid #497FEB;
 	transition: all .3s;
 }
 
@@ -181,11 +188,11 @@ header nav a:hover {
 }
 
 header nav li a:first-child:hover {
-	background-color: #263739;
+	background-color: #2C3926;
 	color: #fff;
 }
 
-header nav li a:first-child:focus .icon-circle-down {
+header nav li a:focus .icon-circle-down {
 	margin-left: 34px;
 }
 
@@ -298,10 +305,10 @@ input[type="submit"]:hover{
 }
 
 footer {
-	background: #69B0CD;
+	background: #497FEB;
 	color:#fff;
-	z-index: 0;
-	padding: 10px 0px;
+	width: 112%;
+	padding: 10px 0;
 	text-align: center;
 }
 
