@@ -58,25 +58,25 @@ $precio[$i] = $atributo ['precio'];
 					<ul class="submenu">
 						<li>
 							<div class="barra"></div>
-							<a href="#">Alimentos</a></li>
+							<a href="productos.php?tipo=Alimento">Alimentos</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Frutas y Verduras</a></li>
+							<a href="productos.php?tipo=Frutas y Verduras">Frutas y Verduras</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Charcuteria</a></li>
+							<a href="productos.php?tipo=Charcuteria">Charcuteria</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Licores</a></li>
+							<a href="productos.php?tipo=Licores">Licores</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Cuidado e Higiene</a></li>
+							<a href="productos.php?tipo=Cosmeticos">Cuidado Personal</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Mascotas</a></li>
+							<a href="productos.php?tipo=Mascotas">Mascotas</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Limpieza y Hogar</a></li>
+							<a href="productos.php?tipo=Limpieza">Limpieza y Hogar</a></li>
 					</ul>
 				</li>
 
@@ -115,39 +115,39 @@ $precio[$i] = $atributo ['precio'];
 				<center>
 					
 					<div class="producto">
-					<a href="detalles.php?=<?php echo $id[1]?>">
+					<a href="detalles.php?id_producto=<?php echo $id[1]?>">
 						<img id="aceite" src="<?php echo $imagen[1]?>"></a><br>
-					<span class="nombre"><a href="detalles.php?=<?php echo $id[1]?>">
+					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[1]?>">
 						<?php echo "$nombre[1]"?></a></span><br>
 					<span><strong>Precio: </strong><?php echo "$precio[1]"?> Bs.S</span><br>
-					<a href="detalles.php?=<?php echo $id[1]?>">Ver producto</a><br>
+					<a href="detalles.php?id_producto=<?php echo $id[1]?>">Ver producto</a><br>
 					</div>
 					
 					<div class="producto">
-					<a href="detalles.php?=<?php echo $id[10]?>">
+					<a href="detalles.php?id_producto=<?php echo $id[10]?>">
 						<img id="jamon" src="<?php echo $imagen[10]?>"></a><br>
-					<span class="nombre"><a href="detalles.php?=<?php echo $id[10]?>">
+					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[10]?>">
 						<?php echo "$nombre[10]"?></a></span><br>
 					<span><strong>Precio: </strong><?php echo "$precio[10]"?> Bs.S</span><br>
-					<a href="detalles.php?=<?php echo $id[10]?>">Ver producto</a><br>
+					<a href="detalles.php?id_producto=<?php echo $id[10]?>">Ver producto</a><br>
 					</div>
 					
 					<div class="producto">
-					<a href="detalles.php?=<?php echo $id[13]?>">
+					<a href="detalles.php?id_producto=<?php echo $id[13]?>">
 						<img id="queso" src="<?php echo $imagen[13]?>"></a><br>
-					<span class="nombre"><a href="detalles.php?=<?php echo $id[13]?>">
+					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[13]?>">
 						<?php echo "$nombre[13]"?></a></span><br>
 					<span><strong>Precio: </strong><?php echo "$precio[13]"?> Bs.S</span><br>
-					<a href="detalles.php?=<?php echo $id[13]?>">Ver producto</a><br>
+					<a href="detalles.php?id_producto=<?php echo $id[13]?>">Ver producto</a><br>
 					</div>
 					
 					<div class="producto">
-					<a href="detalles.php?=<?php echo $id[5]?>">
+					<a href="detalles.php?id_producto=<?php echo $id[5]?>">
 						<img id="cafe" src="<?php echo $imagen[5]?>"></a><br>
-					<span class="nombre"><a href="detalles.php?=<?php echo $id[5]?>">
+					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[5]?>">
 						<?php echo "$nombre[5]"?></a></span><br>
 					<span><strong>Precio: </strong><?php echo "$precio[5]"?> Bs.S</span><br>
-					<a href="detalles.php?=<?php echo $id[5]?>">Ver producto</a><br>
+					<a href="detalles.php?id_producto=<?php echo $id[5]?>">Ver producto</a><br>
 					</div>
 				</center>
 			</div>
