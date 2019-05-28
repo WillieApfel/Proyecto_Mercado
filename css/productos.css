@@ -1,0 +1,303 @@
+@font-face{
+font-family:Raphtalia;
+src: url(../fonts/Raphtalia_DEMO.ttf);
+}
+
+@font-face{
+font-family:Alegreya;
+src: url(../fonts/Alegreya-Regular.ttf);
+}
+
+@font-face{
+font-family:BreeSerif;
+src: url(../fonts/BreeSerif-Regular.ttf);
+}
+
+
+@font-face{
+font-family:MachineScript;
+src: url(../fonts/MachineScript.ttf);
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Alegreya';
+	overflow-x: hidden;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: #497FEB;
+	color: #fff;
+}
+
+header h1 {
+	font-family: 'Raphtalia';
+	font-weight: lighter;
+	font-size: 70px;
+	display: inline-block;
+	text-align: left;
+	margin: 10px;
+	text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
+}
+
+header .menuP {
+	display: inline-block;
+	margin-top: 22px;
+	float: right;
+}
+
+header .menuP li {
+	display: inline-block;
+	margin: 20px 10px;
+	font-size: 18px;
+}
+
+header .menuP a, h1 a{
+	padding: 9px;
+	color: #fff;
+	text-decoration: none;
+}
+
+header .menuP a:hover {
+	background: #193C83;
+	border-radius: 30px;
+}
+
+header span {
+	margin-right: 28px;
+	margin-left: 6px;
+}
+
+header li#carrito {
+	margin-right: 24px;
+	margin-left: 6px;
+	font-size: 20px;
+}
+
+.icon-user, .icon-exit {
+	margin-right: 10px;
+	font-size: 20px;
+}
+
+.icon-circle-down {
+	margin-left: 40px;
+	transition: all .1s;
+}
+
+.menu-bar{
+	cursor: pointer;
+	padding: 16px;
+	color: #fff;
+	opacity: .7;
+}
+
+.menu-bar:hover {
+	opacity: 1;
+}
+
+header nav{
+	font-family: 'BreeSerif';
+	position: fixed;
+	width: 64px;
+	height: 100%;
+	background:#193C83;
+	outline: 1px solid #193C83;
+	transition: all .3s;
+	overflow-x: hidden;
+    overflow-y: auto;
+}
+
+header nav:hover {
+	width: 20%;
+	max-width: 300px;
+}
+
+header nav::-webkit-scrollbar {
+  width: 14px;
+}
+
+header nav::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+header nav::-webkit-scrollbar-thumb {
+  background: #414A36; 
+  border-radius: 5px;
+}
+
+header nav::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+header ul {
+	list-style: none;
+}
+
+header nav > ul {
+	padding-bottom: 120px;
+}
+
+.barra {
+	width: 0;
+	position: absolute;
+	height: 56px;
+	background-color: rgba(21, 65, 33, .5);
+	transition: all .2s;
+}
+
+header nav li {
+	border-bottom: 1px solid #497FEB;
+	transition: all .3s;
+}
+
+header nav li:hover {
+	border-left: 5px solid #eee;
+}
+
+header nav .submenu li:hover .barra{
+	width: 100%;
+}
+
+.submenu {
+	display: none;
+}
+header nav a {
+	padding: 15px;
+	display: block;
+	color: #fff;
+	opacity: .85;
+	font-size: 1.2em;
+	text-decoration: none;
+	position: relative;
+}
+
+header nav a:hover {
+	opacity: 1;
+	color: #FFE0AD;
+}
+
+header nav li a:first-child:hover {
+	background-color: #2C3926;
+	color: #fff;
+}
+
+header nav li a:focus .icon-circle-down {
+	margin-left: 34px;
+}
+
+div.contenido {
+	width: 93%;
+	margin-top: 109px;
+	margin-left: 66px;
+	padding: 30px 20px;
+}
+
+div.contenido h2 {
+	font-family: 'MachineScript', cursive;
+	font-size: 28px;
+	font-variant: small-caps;
+	font-weight: 900;
+	margin-bottom: 26px;
+	text-align: center;
+	color: #E2F7EA;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, -4px 3px 0 #000;
+}
+
+div.productos {
+	box-sizing: border-box;
+	margin-bottom: 50px;
+}
+
+div.producto {
+	display: inline-block;
+	margin: 10px 30px;
+	font-size: 18px;
+	width: 19%;
+	border: 1px solid rgba(255,255,255,0);
+}
+
+div.producto:hover {
+	border: 1px solid #BECFF2;
+}
+
+div.producto img {
+	width:90%;
+}
+
+div.producto img.alto {
+	height: 250px;
+	width: 110px;
+}
+
+div.producto img.ancha {
+	height: 170px;
+	padding-top: 90px;
+}
+
+div.producto img.cuadrado {
+	width: 90%;
+	padding-top: 40px;
+}
+
+div.producto img.grande {
+	height: 250px;
+	width: 160px;
+}
+
+div.producto .nombre{
+	text-transform: uppercase;
+}
+
+div.producto a {
+	color: #4F5B51;
+	padding: 9px;
+	text-decoration: none;
+}
+
+div.producto a:visited {
+	color:#4F5B51;
+}
+
+div.producto a:hover{
+	color: #778E7B;
+}
+
+div.producto a.ver {
+	background-color: #2851A4;
+	color: #fff;
+	font-size: 16px;
+	display: block;
+	margin-top: 18px;
+	width: 60%;
+	border-radius: 2px;
+	padding: 3px 0;
+}
+
+div.producto a.ver:hover{
+	background-color: #6387D3;
+}
+
+footer {
+	background: #497FEB;
+	color:#fff;
+	z-index: 0;
+	width: 112%;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.abrir {
+	transform: translateX(240px);
+}
+
+.activado > a{
+	background-color: #2C3926;
+	color: #fff;
+}

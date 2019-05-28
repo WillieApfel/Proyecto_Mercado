@@ -23,7 +23,6 @@ $precio[$i] = $atributo ['precio'];
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
-	<link href="https://fonts.googleapis.com/css?family=Caveat|Gochi+Hand|Patrick+Hand|Permanent+Marker&display=swap" rel="stylesheet">
 	<script src="js/jquery.js"></script>
 	<script src="js/abrir.js"></script>
 </head>
@@ -37,12 +36,12 @@ $precio[$i] = $atributo ['precio'];
             <li>|</li>
             <li><a href ="desconexion.php"><span class="icon-exit"></span>Cerrar Sesion<?php ?></a></li>
 			<li>|</li>
-            <li><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="#" class="icon-cart"></a></li>
             <?php else: ?>
             <li><a href="login.html">Acceder</a></li>
 			<li>|</li>
 			<li><a href="Registro.html">Registrarme</a></li>
-            <li><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="#" class="icon-cart"></a></li>
             <?php endif; ?>
 		</ul>
 
@@ -70,7 +69,7 @@ $precio[$i] = $atributo ['precio'];
 							<a href="productos.php?tipo=Licores">Licores</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="productos.php?tipo=Cosmeticos">Cuidado Personal</a></li>
+							<a href="productos.php?tipo=Cosmeticos">Cuidado e Higiene</a></li>
 						<li>
 							<div class="barra"></div>
 							<a href="productos.php?tipo=Mascotas">Mascotas</a></li>
@@ -111,74 +110,119 @@ $precio[$i] = $atributo ['precio'];
 		<div class="contenido">
 		<h2>Productos Destacados</h2>
 		
-			<div class="productos-destacados">
+			<div class="productos destacados">
 				<center>
 					
 					<div class="producto">
 					<a href="detalles.php?id_producto=<?php echo $id[1]?>">
-						<img id="aceite" src="<?php echo $imagen[1]?>"></a><br>
+						<img class="alto" src="<?php echo $imagen[1]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[1]?>">
 						<?php echo "$nombre[1]"?></a></span><br>
-					<span><strong>Precio: </strong><?php echo "$precio[1]"?> Bs.S</span><br>
-					<a href="detalles.php?id_producto=<?php echo $id[1]?>">Ver producto</a><br>
+					<span><strong>Precio: </strong><?php echo $precio[1]?> Bs.S</span><br>
+					<a href="detalles.php?id_producto=<?php echo $id[1]?>" class="ver">Ver producto</a><br>
 					</div>
 					
 					<div class="producto">
 					<a href="detalles.php?id_producto=<?php echo $id[10]?>">
-						<img id="jamon" src="<?php echo $imagen[10]?>"></a><br>
+						<img class="ancha" src="<?php echo $imagen[10]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[10]?>">
 						<?php echo "$nombre[10]"?></a></span><br>
-					<span><strong>Precio: </strong><?php echo "$precio[10]"?> Bs.S</span><br>
-					<a href="detalles.php?id_producto=<?php echo $id[10]?>">Ver producto</a><br>
+					<span><strong>Precio: </strong><?php echo $precio[10]?> Bs.S</span><br>
+					<a href="detalles.php?id_producto=<?php echo $id[10]?>" class="ver">Ver producto</a><br>
 					</div>
 					
 					<div class="producto">
 					<a href="detalles.php?id_producto=<?php echo $id[13]?>">
-						<img id="queso" src="<?php echo $imagen[13]?>"></a><br>
+						<img class="cuadrado" src="<?php echo $imagen[13]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[13]?>">
 						<?php echo "$nombre[13]"?></a></span><br>
-					<span><strong>Precio: </strong><?php echo "$precio[13]"?> Bs.S</span><br>
-					<a href="detalles.php?id_producto=<?php echo $id[13]?>">Ver producto</a><br>
+					<span><strong>Precio: </strong><?php echo $precio[13]?> Bs.S</span><br>
+					<a href="detalles.php?id_producto=<?php echo $id[13]?>" class="ver">Ver producto</a><br>
 					</div>
 					
 					<div class="producto">
 					<a href="detalles.php?id_producto=<?php echo $id[5]?>">
-						<img id="cafe" src="<?php echo $imagen[5]?>"></a><br>
+						<img class="alto" src="<?php echo $imagen[5]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[5]?>">
 						<?php echo "$nombre[5]"?></a></span><br>
-					<span><strong>Precio: </strong><?php echo "$precio[5]"?> Bs.S</span><br>
-					<a href="detalles.php?id_producto=<?php echo $id[5]?>">Ver producto</a><br>
+					<span><strong>Precio: </strong><?php echo $precio[5]?> Bs.S</span><br>
+					<a href="detalles.php?id_producto=<?php echo $id[5]?>" class="ver">Ver producto</a><br>
 					</div>
 				</center>
 			</div>
 
-		<h2>Productos en Oferta</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<h2>Productos en Oferta !</h2>
+		
+		<div class="productos oferta">
+				<center>
+					
+					<div class="producto">
+					<a href="detalles.php?id_producto=<?php echo $id[3]?>">
+						<img class="alto" src="<?php echo $imagen[3]?>"></a><br>
+					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[3]?>">
+						<?php echo "$nombre[3]"?></a></span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[3]?> Bs.S</del></span><br>
+					<span><?php echo $precio[3]/2?> Bs.S</span><br>
+					<a href="detalles.php?id_producto=<?php echo $id[3]?>" class="ver">Ver producto</a><br>
+					</div>
+					
+					<div class="producto">
+					<a href="detalles.php?id_producto=<?php echo $id[20]?>">
+						<img class="ancha" src="<?php echo $imagen[20]?>"></a><br>
+					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[20]?>">
+						<?php echo "$nombre[20]"?></a></span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[20]?> Bs.S</del></span><br>
+					<span><?php echo $precio[20]/2?> Bs.S</span><br>
+					<a href="detalles.php?id_producto=<?php echo $id[20]?>" class="ver">Ver producto</a><br>
+					</div>
+					
+					<div class="producto">
+					<a href="detalles.php?id_producto=<?php echo $id[41]?>">
+						<img class="grande" src="<?php echo $imagen[41]?>"></a><br>
+					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[41]?>">
+						<?php echo "$nombre[41]"?></a></span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[41]?> Bs.S</del></span><br>
+					<span><?php echo $precio[41]/2?> Bs.S</span><br>
+					<a href="detalles.php?id_producto=<?php echo $id[41]?>" class="ver">Ver producto</a><br>
+					</div>
+					
+					<div class="producto">
+					<a href="detalles.php?id_producto=<?php echo $id[34]?>">
+						<img class="alto" src="<?php echo $imagen[34]?>"></a><br>
+					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[34]?>">
+						<?php echo "$nombre[34]"?></a></span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[34]?> Bs.S</del></span><br>
+					<span><?php echo $precio[34]/2?> Bs.S</span><br>
+					<a href="detalles.php?id_producto=<?php echo $id[34]?>" class="ver">Ver producto</a><br>
+					</div>
+				</center>
+			</div>
 
 		<h2>Novedades</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+		<div class="productos novedades">
+				<center>
+					
+					<div class="producto">
+					<a href="detalles.php?id_producto=<?php echo $id[31]?>">
+						<img class="alto" src="<?php echo $imagen[31]?>"></a><br>
+					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[31]?>">
+						<?php echo "$nombre[31]"?></a></span><br>
+					<span><strong>Precio: </strong><?php echo $precio[31]?> Bs.S</span><br>
+					<a href="detalles.php?id_producto=<?php echo $id[31]?>" class="ver">Ver producto</a><br>
+					</div>
+					
+					<div class="producto">
+					<a href="detalles.php?id_producto=<?php echo $id[32]?>">
+						<img class="alto" src="<?php echo $imagen[32]?>"></a><br>
+					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[32]?>">
+						<?php echo "$nombre[32]"?></a></span><br>
+					<span><strong>Precio: </strong><?php echo $precio[32]?> Bs.S</span><br>
+					<a href="detalles.php?id_producto=<?php echo $id[32]?>" class="ver">Ver producto</a><br>
+					</div>
+				</center>
+			</div>
+
 		</div>
 	</section>
 

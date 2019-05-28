@@ -14,9 +14,8 @@ $tope_ciclo = $id + $cantidad;
 <head>
 	<title>Wolmar</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/productos.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
-	<link href="https://fonts.googleapis.com/css?family=Caveat|Gochi+Hand|Patrick+Hand|Permanent+Marker&display=swap" rel="stylesheet">
 	<script src="js/jquery.js"></script>
 	<script src="js/abrir.js"></script>
 </head>
@@ -30,12 +29,12 @@ $tope_ciclo = $id + $cantidad;
             <li>|</li>
             <li><a href ="desconexion.php"><span class="icon-exit"></span>Cerrar Sesion<?php ?></a></li>
 			<li>|</li>
-            <li><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="#" class="icon-cart"></a></li>
             <?php else: ?>
             <li><a href="login.html">Acceder</a></li>
 			<li>|</li>
 			<li><a href="Registro.html">Registrarme</a></li>
-            <li><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="#" class="icon-cart"></a></li>
             <?php endif; ?>
 		</ul>
 
@@ -63,7 +62,7 @@ $tope_ciclo = $id + $cantidad;
 							<a href="productos.php?tipo=Licores">Licores</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="productos.php?tipo=Cosmeticos">Cuidado Personal</a></li>
+							<a href="productos.php?tipo=Cosmeticos">Cuidado e Higiene</a></li>
 						<li>
 							<div class="barra"></div>
 							<a href="productos.php?tipo=Mascotas">Mascotas</a></li>
@@ -90,19 +89,20 @@ $tope_ciclo = $id + $cantidad;
 
 	<section class="main">
 	
-	<?php echo "$tipo_producto";?>
-	<?php echo "$cantidad";?>
-	<?php echo "$id";?>
-	<?php echo "$tope_ciclo";?>
-	<?php
-		for($i = $id; $i < $tope_ciclo; $i++){
-    		$consulta = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = $i");
-    		$atributo = mysqli_fetch_array($consulta);
-    		$imagen = $atributo ['imagen'];
-    		echo " <img src='$imagen'> ";
-		}
-	?>
-
+	<div class="contenido">
+		<?php echo "$tipo_producto";?>
+		<?php echo "$cantidad";?>
+		<?php echo "$id";?>
+		<?php echo "$tope_ciclo";?>
+		<?php
+			for($i = $id; $i < $tope_ciclo; $i++){
+	    		$consulta = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = $i");
+	    		$atributo = mysqli_fetch_array($consulta);
+	    		$imagen = $atributo ['imagen'];
+	    		echo " <img src='$imagen'> ";
+			}
+		?>
+	</div>
 		
 	</section>
 
