@@ -9,7 +9,7 @@ $numero_id = $_GET['id_producto'];
 <head>
 	<title>Wolmar</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/productos.css">
+	<link rel="stylesheet" type="text/css" href="css/detalles.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/abrir.js"></script>
@@ -89,10 +89,27 @@ $numero_id = $_GET['id_producto'];
 	        $consulta = mysqli_query($conexion,"SELECT * from producto WHERE id_producto = '$numero_id'");
 			$atributo = mysqli_fetch_array($consulta);
 	   		$imagen = $atributo ['imagen'];
-	        echo " <img src='$imagen'> ";
-	        echo $atributo ['nombre'];
-	        echo $atributo ['precio'];
+	   		$nombre = $atributo ['nombre'];
+		    $precio = $atributo ['precio'];
+		    		echo "<div class= 'producto'>
+						<img src='$imagen'>
+						</div><br>
+						<h3>$nombre</h3><br>
+						<p class='precio'><strong>Precio: </strong>$precio Bs.S</p><br>";
 		?>
+
+		<div id="btn-agg-carrito">
+			<input type="submit" name="Agregar" value="Agregar al Carrito">
+		</div>
+
+		<h4>Descripción del Producto</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
 	</div>
 		
 	</section>

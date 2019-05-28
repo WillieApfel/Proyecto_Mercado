@@ -90,18 +90,36 @@ $tope_ciclo = $id + $cantidad;
 	<section class="main">
 	
 	<div class="contenido">
-		<?php echo "$tipo_producto";?>
-		<?php echo "$cantidad";?>
-		<?php echo "$id";?>
-		<?php echo "$tope_ciclo";?>
-		<?php
-			for($i = $id; $i < $tope_ciclo; $i++){
-	    		$consulta = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = $i");
-	    		$atributo = mysqli_fetch_array($consulta);
-	    		$imagen = $atributo ['imagen'];
-	    		echo " <img src='$imagen'> ";
-			}
-		?>
+
+		<?php echo "<h2>$tipo_producto</h2>";?>
+		
+			<div class="productos">
+			<?php
+				for($i = $id; $i < $tope_ciclo; $i++){
+		    		$consulta = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = $i");
+		    		$atributo = mysqli_fetch_array($consulta);
+		    		$imagen = $atributo ['imagen'];
+		    		/*
+		    		echo " <img src='$imagen'> ";
+		    		echo $atributo ['nombre'];
+		       		echo $atributo ['precio'];
+		       		*/
+		    		$nombre = $atributo ['nombre'];
+		    		$precio = $atributo ['precio'];
+		    		echo "<div class= 'producto'>
+						<a href='detalles.php?id_producto=$i'>
+							<img src='$imagen'></a><br>
+						<span class='nombre'><a href='detalles.php?id_producto=$i'>
+							$nombre</a></span><br>
+						<span><strong>Precio: </strong>$precio Bs.S</span><br>
+						<a href='detalles.php?id_producto=$i' class='ver'>Ver producto</a><br>
+						</div>";
+
+				}
+			?>
+			</div>
+
+		</div>
 	</div>
 		
 	</section>
