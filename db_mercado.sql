@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2019 a las 05:18:11
+-- Tiempo de generación: 29-05-2019 a las 17:49:28
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `cliente` (
   `id_cliente` int(20) NOT NULL,
   `cedula1` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -41,21 +41,40 @@ CREATE TABLE `cliente` (
 
 CREATE TABLE `contacto` (
   `id_mensaje` int(20) NOT NULL,
-  `nombres` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `correo` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `telefono` varchar(25) COLLATE utf8mb4_general_ci NOT NULL,
-  `asunto` text COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nombre_usuario` varchar(20) NOT NULL,
+  `nombres` varchar(100) NOT NULL,
+  `correo` varchar(50) NOT NULL,
+  `telefono` varchar(25) NOT NULL,
+  `asunto` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `contacto`
 --
 
-INSERT INTO `contacto` (`id_mensaje`, `nombres`, `correo`, `telefono`, `asunto`) VALUES
-(6, 'Willie Antonio Manzano Rodríguez', 'williemr17@gmail.com', '04124095885', 'nada funciona'),
-(7, 'Willie Antonio Manzano Rodríguez', 'williemr17@gmail.com', '04124095885', 'Soy un Sadico'),
-(8, 'Carolina Rodriguez', 'mcarolr29@gmail.com', '04244406924', 'Muy buen servicio.'),
-(9, 'oswaldo manuel cabrera licon', 'cualquiervaina@gmail.com', '04244406924', 'sexo');
+INSERT INTO `contacto` (`id_mensaje`, `nombre_usuario`, `nombres`, `correo`, `telefono`, `asunto`) VALUES
+(6, '', 'Willie Antonio Manzano Rodríguez', 'williemr17@gmail.com', '04124095885', 'nada funciona'),
+(7, '', 'Willie Antonio Manzano Rodríguez', 'williemr17@gmail.com', '04124095885', 'Soy un Sadico'),
+(8, '', 'Carolina Rodriguez', 'mcarolr29@gmail.com', '04244406924', 'Muy buen servicio.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `permisos`
+--
+
+CREATE TABLE `permisos` (
+  `id_permisos` int(5) NOT NULL,
+  `rol` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `permisos`
+--
+
+INSERT INTO `permisos` (`id_permisos`, `rol`) VALUES
+(1, 'admin'),
+(2, 'cliente');
 
 -- --------------------------------------------------------
 
@@ -65,23 +84,24 @@ INSERT INTO `contacto` (`id_mensaje`, `nombres`, `correo`, `telefono`, `asunto`)
 
 CREATE TABLE `persona` (
   `id_persona` int(8) NOT NULL,
-  `nombres` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `apellidos` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
-  `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `nombre_usuario` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `clave` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nombres` varchar(50) NOT NULL,
+  `apellidos` varchar(50) NOT NULL,
+  `correo` varchar(50) NOT NULL,
+  `nombre_usuario` varchar(20) NOT NULL,
+  `clave` varchar(30) NOT NULL,
+  `id_permisos` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `persona`
 --
 
-INSERT INTO `persona` (`id_persona`, `nombres`, `apellidos`, `correo`, `nombre_usuario`, `clave`) VALUES
-(27171641, 'Daniela ', 'Gomez', 'danielagomez007@hotmail.com', 'danielavgj', 'gomez998'),
-(27488851, 'Carlos Alberto', 'Zapata Cardozo', 'kabetsinespacios@gmail.com', 'kabet', 'salitre23'),
-(27877535, 'Willie Antonio', 'Manzano Rodriguez', 'williemr17@gmail.com', 'WillieApfel', '12345678'),
-(27877536, 'Ameriquita', 'Figuerita', 'amerikcfm75@gmail.com', 'Americafiguera', 'america1234'),
-(27877537, 'oswaldo manuel', 'cabrera licon', 'cualquiervaina@gmail.com', 'oswalpipi', '123456');
+INSERT INTO `persona` (`id_persona`, `nombres`, `apellidos`, `correo`, `nombre_usuario`, `clave`, `id_permisos`) VALUES
+(27171641, 'Daniela ', 'Gomez', 'danielagomez007@hotmail.com', 'danielavgj', 'gomez998', 2),
+(27488851, 'Carlos Alberto', 'Zapata Cardozo', 'kabetsinespacios@gmail.com', 'kabet', 'salitre23', 1),
+(27877535, 'Willie Antonio', 'Manzano Rodriguez', 'williemr17@gmail.com', 'WillieApfel', '12345678', 1),
+(27877536, 'Ameriquita', 'Figuerita', 'amerikcfm75@gmail.com', 'Americafiguera', 'america1234', 2),
+(27877537, 'oswaldo manuel', 'cabrera licon', 'cualquiervaina@gmail.com', 'oswalpipi', '123456', 2);
 
 -- --------------------------------------------------------
 
@@ -96,7 +116,7 @@ CREATE TABLE `producto` (
   `imagen` varchar(100) NOT NULL,
   `precio` float NOT NULL,
   `cantidad` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `producto`
@@ -162,11 +182,18 @@ ALTER TABLE `contacto`
   ADD PRIMARY KEY (`id_mensaje`);
 
 --
+-- Indices de la tabla `permisos`
+--
+ALTER TABLE `permisos`
+  ADD PRIMARY KEY (`id_permisos`);
+
+--
 -- Indices de la tabla `persona`
 --
 ALTER TABLE `persona`
   ADD PRIMARY KEY (`id_persona`),
-  ADD UNIQUE KEY `nombre_usuario` (`nombre_usuario`);
+  ADD KEY `id_permisos` (`id_permisos`),
+  ADD KEY `nombre_usuario` (`nombre_usuario`);
 
 --
 -- Indices de la tabla `producto`
@@ -185,6 +212,12 @@ ALTER TABLE `contacto`
   MODIFY `id_mensaje` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT de la tabla `permisos`
+--
+ALTER TABLE `permisos`
+  MODIFY `id_permisos` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
@@ -194,7 +227,17 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_producto` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `persona`
+--
+ALTER TABLE `persona`
+  ADD CONSTRAINT `persona_ibfk_1` FOREIGN KEY (`id_permisos`) REFERENCES `permisos` (`id_permisos`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
