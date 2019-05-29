@@ -99,7 +99,7 @@ $numero_id = $_GET['id_producto'];
 		?>
 
 		<div id="btn-agg-carrito">
-			<input type="submit" name="Agregar" value="Agregar al Carrito">
+			<a href="agregar_carrito.php?id_producto=<?php echo "$numero_id"?>" class="Agregar">Agregar al Carrito</a>
 		</div>
 
 		<h4>Descripción del Producto</h4>
