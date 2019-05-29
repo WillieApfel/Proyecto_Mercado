@@ -42,12 +42,12 @@ if(isset($_SESSION['usuario'])){
             <li>|</li>
             <li><a href ="desconexion.php"><span class="icon-exit"></span>Cerrar Sesion<?php ?></a></li>
 			<li>|</li>
-            <li id="carrito"><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="carro.php" class="icon-cart"></a></li>
             <?php else: ?>
             <li><a href="login.html">Acceder</a></li>
 			<li>|</li>
 			<li><a href="Registro.html">Registrarme</a></li>
-            <li id="carrito"><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="login.php" class="icon-cart"></a></li>
             <?php endif; ?>
 		</ul>
 
@@ -63,7 +63,7 @@ if(isset($_SESSION['usuario'])){
 					<ul class="submenu">
 						<li>
 							<div class="barra"></div>
-							<a href="productos.php?tipo=Alimento">Alimentos</a></li>
+							<a href="productos.php?tipo=Alimentos">Alimentos</a></li>
 						<li>
 							<div class="barra"></div>
 							<a href="productos.php?tipo=Frutas y Verduras">Frutas y Verduras</a></li>
@@ -92,10 +92,8 @@ if(isset($_SESSION['usuario'])){
 				<li>
 					<a href="#"><span class="icon-airplane"></span>Importado</a>
 				</li>
-				<?php if (isset($_SESSION['usuario'])): ?>
-					<?php if ($rol=1): ?>
-					<a href="herramientas_admin.php"><span class="icon-envelop"></span>Administrador</a>
-					<?php endif; ?>
+				<?php if (isset($_SESSION['usuario']) && ($rol==1)): ?>
+					<li><a href="herramientas_admin.php"><span class="icon-user-plus"></span>Administrador</a></li>
 				<?php endif; ?>
 				<li>
 					<a href="contacto.php"><span class="icon-envelop"></span>Contáctanos</a>

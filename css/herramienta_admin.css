@@ -4,11 +4,6 @@ src: url(../fonts/Raphtalia_DEMO.ttf);
 }
 
 @font-face{
-font-family:Adinda;
-src: url(../fonts/Adinda.ttf);
-}
-
-@font-face{
 font-family:Alegreya;
 src: url(../fonts/Alegreya-Regular.ttf);
 }
@@ -18,6 +13,11 @@ font-family:BreeSerif;
 src: url(../fonts/BreeSerif-Regular.ttf);
 }
 
+@font-face{
+font-family:Alegreya-ExtraBoldItalic;
+src: url(../fonts/Alegreya-ExtraBoldItalic.ttf);
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -25,7 +25,12 @@ src: url(../fonts/BreeSerif-Regular.ttf);
 
 body {
 	font-family: 'Alegreya';
-	overflow-x: hidden;
+	background-image: url(../multimedia/blur.jpg);
+	background-repeat:no-repeat;
+	/*Fondo estatico*/
+	background-attachment:fixed;
+	background-position:center;
+	background-size: cover;
 }
 
 header {
@@ -192,80 +197,46 @@ header nav li a:focus .icon-circle-down {
 }
 
 section {
-	background-image: url(../multimedia/pimientos.jpg);
-	background-size: contain;
-	background-attachment:fixed;
 	width: 93%;
-	margin: 110px 0 0 66px;
+	margin-top: 109px;
+	margin-left: 66px;
 	padding: 30px 20px;
 }
 
-section h1 {
-	font-family: 'Raphtalia';
-	font-weight: lighter;
-	color: #5F31F8;
-	font-size: 70px;
-	text-align: center;
-}
-
 section h2 {
-	font-size: 20px;
-	margin:0 70px;
-	margin-bottom: 40px;
-	font-weight: normal;
+	font-family: "Alegreya-ExtraBoldItalic";
+	font-size: 58px;
+	font-weight: lighter;
+	margin-bottom: 26px;
+	padding: 0 40px;
+}
+
+span.requisito{
+	color: red;
+}
+
+div {
+	width: 700px;
+	margin: 0 auto;
 	text-align: center;
 }
 
-div#form-contacto {
-	width: 1000px;
-	margin: 0 auto;
-}
-
-div.col-izquierda {
-	width: 47%;
-	float: left;
-}
-
-div.col-derecha {
-	width: 47%;
-	float: right;
-}
-
-#form-contacto form {
+form {
 	background-color: rgba(255, 255, 255, .92);
-	box-shadow: 0 0 10px #bbb;
 	border: 1px solid #ccc;
 	margin: 20px;
-	padding: 40px 50px;
+	padding: 40px 140px;
 	border-radius: 6px;
 }
 
-#form-contacto label {
+label {
 	font-size: 16px;
 	display: block;
 	text-align: left;
 	font-weight: bold;
 }
 
-#form-contacto textarea {
-	width: 100%;
-	resize: vertical;
-	max-height: 300px;
-	min-height: 194px;
-}
-
-#form-contacto p {
-	clear: both;
-	margin-top: 24px;
-	font-size: 18px;
-}
-
-#form-contacto p span {
-	font-size: 22px;
-	margin-right: 10px;
-}
-
-input {
+input, select {
 	margin-bottom: 20px;
 	width: 100%;
 	padding:10px;
@@ -273,7 +244,15 @@ input {
 	border: 1px solid #ccc;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], textarea {
+label.tipo {
+	float: left;
+}
+
+select {
+	width: 65%;
+}
+
+input[type="text"], input[type="number"], select {
 	border-radius: 6px;
 }
 
@@ -283,26 +262,28 @@ input:focus {
 
 input[type="submit"]{
 	display: block;
-	margin: 20px 0;
+	margin-top: 20px;
 	font-size: 14px;
 	font-weight: bold;
 	height: 44px;
 	width: 100px;
-	background: #34A4C2;
+	background: #70C234;
 	color: #fff;
 	border: none;
 	border-radius: 20px;
 }
 
 input[type="submit"]:hover{
-	background: #53C1ED;
+	background: #94ED53;
 	cursor: pointer;
 }
+
 
 footer {
 	background: #497FEB;
 	color:#fff;
-	width: 112%;
+	z-index: 0;
+	width: 104%;
 	padding: 10px 0;
 	text-align: center;
 }
@@ -312,6 +293,6 @@ footer {
 }
 
 .activado > a{
-	background-color: #263739;
+	background-color: #2C3926;
 	color: #fff;
 }

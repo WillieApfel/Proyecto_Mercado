@@ -2,6 +2,7 @@
 session_start();
 include 'connect.php';
 $numero_id = $_GET['id_producto'];
+$rol = $atributo ['id_permisos'];
 ?>
 
 <!DOCTYPE html>
@@ -24,12 +25,12 @@ $numero_id = $_GET['id_producto'];
             <li>|</li>
             <li><a href ="desconexion.php"><span class="icon-exit"></span>Cerrar Sesion<?php ?></a></li>
 			<li>|</li>
-            <li id="carrito"><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="carro.php" class="icon-cart"></a></li>
             <?php else: ?>
             <li><a href="login.html">Acceder</a></li>
 			<li>|</li>
 			<li><a href="Registro.html">Registrarme</a></li>
-            <li id="carrito"><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="login.php" class="icon-cart"></a></li>
             <?php endif; ?>
 		</ul>
 
@@ -45,7 +46,7 @@ $numero_id = $_GET['id_producto'];
 					<ul class="submenu">
 						<li>
 							<div class="barra"></div>
-							<a href="productos.php?tipo=Alimento">Alimentos</a></li>
+							<a href="productos.php?tipo=Alimentos">Alimentos</a></li>
 						<li>
 							<div class="barra"></div>
 							<a href="productos.php?tipo=Frutas y Verduras">Frutas y Verduras</a></li>
@@ -74,7 +75,9 @@ $numero_id = $_GET['id_producto'];
 				<li>
 					<a href="#"><span class="icon-airplane"></span>Importado</a>
 				</li>
-
+				<?php if (isset($_SESSION['usuario']) && ($rol==1)): ?>
+					<li><a href="herramientas_admin.php"><span class="icon-user-plus"></span>Administrador</a></li>
+				<?php endif; ?>
 				<li>
 					<a href="contacto.php"><span class="icon-envelop"></span>Contáctanos</a>
 				</li>
@@ -98,9 +101,7 @@ $numero_id = $_GET['id_producto'];
 						<p class='precio'><strong>Precio: </strong>$precio Bs.S</p><br>";
 		?>
 
-		<div id="btn-agg-carrito">
 			<a href="agregar_carrito.php?id_producto=<?php echo "$numero_id"?>" class="Agregar">Agregar al Carrito</a>
-		</div>
 
 		<h4>Descripción del Producto</h4>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

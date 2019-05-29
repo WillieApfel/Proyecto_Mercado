@@ -6,6 +6,7 @@ $consulta_tipo = mysqli_query($conexion,"SELECT * from producto WHERE tipo = '$t
 $cantidad = mysqli_num_rows($consulta_tipo);
 $atributo = mysqli_fetch_array($consulta_tipo);
 $id = $atributo ['id_producto'];
+$rol = $atributo ['id_permisos'];
 $tope_ciclo = $id + $cantidad;
 ?>
 
@@ -29,12 +30,12 @@ $tope_ciclo = $id + $cantidad;
             <li>|</li>
             <li><a href ="desconexion.php"><span class="icon-exit"></span>Cerrar Sesion<?php ?></a></li>
 			<li>|</li>
-            <li id="carrito"><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="carro.php" class="icon-cart"></a></li>
             <?php else: ?>
             <li><a href="login.html">Acceder</a></li>
 			<li>|</li>
 			<li><a href="Registro.html">Registrarme</a></li>
-            <li id="carrito"><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="login.php" class="icon-cart"></a></li>
             <?php endif; ?>
 		</ul>
 
@@ -50,7 +51,7 @@ $tope_ciclo = $id + $cantidad;
 					<ul class="submenu">
 						<li>
 							<div class="barra"></div>
-							<a href="productos.php?tipo=Alimento">Alimentos</a></li>
+							<a href="productos.php?tipo=Alimentos">Alimentos</a></li>
 						<li>
 							<div class="barra"></div>
 							<a href="productos.php?tipo=Frutas y Verduras">Frutas y Verduras</a></li>
@@ -79,7 +80,9 @@ $tope_ciclo = $id + $cantidad;
 				<li>
 					<a href="#"><span class="icon-airplane"></span>Importado</a>
 				</li>
-
+				<?php if (isset($_SESSION['usuario']) && ($rol==1)): ?>
+					<li><a href="herramientas_admin.php"><span class="icon-user-plus"></span>Administrador</a></li>
+				<?php endif; ?>
 				<li>
 					<a href="contacto.php"><span class="icon-envelop"></span>Contáctanos</a>
 				</li>

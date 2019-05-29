@@ -194,7 +194,7 @@ header nav li a:focus .icon-circle-down {
 
 div.contenido {
 	width: 93%;
-	text-align: center;
+	text-align: left;
 	overflow: hidden;
 	margin-top: 109px;
 	margin-left: 66px;
@@ -216,7 +216,7 @@ div.producto {
 	margin: 20px 30px;
 	font-size: 18px;
 	width: 40%;
-	height: 35%;
+	height: 60%;
 	border: 1px solid #bbb;
 }
 
@@ -233,27 +233,24 @@ div.contenido p.precio {
 	font-size: 20px;
 }
 
-div.contenido .btn-agg-carrito {
+div.contenido a {
 	text-align: left;
-}
-
-div.contenido input[type="submit"] {
-	text-align: center;
-	display: block;
+	display: inline-block;
 	margin: 20px 0;
 	font-size: 14px;
-	font-weight: bold;
-	height: 44px;
-	width: 140px;
+	padding: 9px;
+	text-decoration: none;
 	background: #34A4C2;
 	color: #fff;
-	border: none;
 	border-radius: 20px;
 }
 
-div.contenido input[type="submit"]:hover{
+div.contenido a:visited {
+	color:#53C1ED;
+}
+
+div.contenido a:hover{
 	background: #53C1ED;
-	cursor: pointer;
 }
 
 div.contenido h4 {
@@ -264,36 +261,6 @@ div.contenido h4 {
 div.contenido p {
 	text-align: left;
 	margin-right: 60px;
-}
-
-div.producto a {
-	color: #4F5B51;
-	padding: 9px;
-	text-decoration: none;
-}
-
-div.producto a:visited {
-	color:#4F5B51;
-}
-
-div.producto a:hover{
-	color: #778E7B;
-}
-
-div.producto a.ver {
-	background-color: #2851A4;
-	color: #fff;
-	font-size: 16px;
-	display: block;
-	margin: 0 auto;
-	margin-top: 18px;
-	width: 60%;
-	border-radius: 2px;
-	padding: 3px 0;
-}
-
-div.producto a.ver:hover{
-	background-color: #6387D3;
 }
 
 footer {

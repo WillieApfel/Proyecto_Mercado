@@ -6,6 +6,7 @@ if(isset($_SESSION['usuario'])){
 	$consulta = "SELECT * FROM persona WHERE nombre_usuario = '$nombre_usuario'";
 	$resultado = mysqli_query($conexion, $consulta);
 	$atributo = mysqli_fetch_array($resultado);
+	$rol = $atributo ['id_permisos'];
 }
 ?>
 
@@ -30,12 +31,12 @@ if(isset($_SESSION['usuario'])){
             <li>|</li>
             <li><a href ="desconexion.php"><span class="icon-exit"></span>Cerrar Sesion<?php ?></a></li>
 			<li>|</li>
-            <li><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="carro.php" class="icon-cart"></a></li>
             <?php else: ?>
             <li><a href="login.html">Acceder</a></li>
 			<li>|</li>
 			<li><a href="Registro.html">Registrarme</a></li>
-            <li><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="login.php" class="icon-cart"></a></li>
             <?php endif; ?>
 		</ul>
 
@@ -51,28 +52,25 @@ if(isset($_SESSION['usuario'])){
 					<ul class="submenu">
 						<li>
 							<div class="barra"></div>
-							<a href="#">Alimentos</a></li>
+							<a href="productos.php?tipo=Alimentos">Alimentos</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Frutas y Verduras</a></li>
+							<a href="productos.php?tipo=Frutas y Verduras">Frutas y Verduras</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Carnes</a></li>
+							<a href="productos.php?tipo=Charcuteria">Charcuteria</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Charcuteria</a></li>
+							<a href="productos.php?tipo=Licores">Licores</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Licores</a></li>
+							<a href="productos.php?tipo=Cosmeticos">Cuidado e Higiene</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Cuidado Personal</a></li>
+							<a href="productos.php?tipo=Mascotas">Mascotas</a></li>
 						<li>
 							<div class="barra"></div>
-							<a href="#">Mascotas</a></li>
-						<li>
-							<div class="barra"></div>
-							<a href="#">Limpieza y Hogar</a></li>
+							<a href="productos.php?tipo=Limpieza">Limpieza y Hogar</a></li>
 					</ul>
 				</li>
 
@@ -83,7 +81,9 @@ if(isset($_SESSION['usuario'])){
 				<li>
 					<a href="#"><span class="icon-airplane"></span>Importado</a>
 				</li>
-
+				<?php if (isset($_SESSION['usuario']) && ($rol==1)): ?>
+					<li><a href="herramientas_admin.php"><span class="icon-user-plus"></span>Administrador</a></li>
+				<?php endif; ?>
 				<li>
 					<a href="contacto.php"><span class="icon-envelop"></span>Contáctanos</a>
 				</li>

@@ -43,7 +43,7 @@ if(isset($_SESSION['usuario'])){
             <li><a href="login.html">Acceder</a></li>
 			<li>|</li>
 			<li><a href="Registro.html">Registrarme</a></li>
-            <li id="carrito"><a href="#" class="icon-cart"></a></li>
+            <li id="carrito"><a href="login.php" class="icon-cart"></a></li>
             <?php endif; ?>
 		</ul>
 
@@ -59,7 +59,7 @@ if(isset($_SESSION['usuario'])){
 					<ul class="submenu">
 						<li>
 							<div class="barra"></div>
-							<a href="productos.php?tipo=Alimento">Alimentos</a></li>
+							<a href="productos.php?tipo=Alimentos">Alimentos</a></li>
 						<li>
 							<div class="barra"></div>
 							<a href="productos.php?tipo=Frutas y Verduras">Frutas y Verduras</a></li>
@@ -88,10 +88,8 @@ if(isset($_SESSION['usuario'])){
 				<li>
 					<a href="#"><span class="icon-airplane"></span>Importado</a>
 				</li>
-				<?php if (isset($_SESSION['usuario']) && $rol==1): ?>
-					<?php if ($rol=1): ?>
-					<a href="herramientas_admin.php"><span class="icon-envelop"></span>Administrador</a>
-					<?php endif; ?>
+				<?php if (isset($_SESSION['usuario']) && ($rol==1)): ?>
+					<li><a href="herramientas_admin.php"><span class="icon-user-plus"></span>Administrador</a></li>
 				<?php endif; ?>
 				<li>
 					<a href="contacto.php"><span class="icon-envelop"></span>Contáctanos</a>
@@ -102,14 +100,11 @@ if(isset($_SESSION['usuario'])){
 
 	<section class="main">
     <?php
-    echo "$cantidad $id_usuario"
+    echo "$cantidad_carro $cantidad_usuario $id_usuario";
 				for($i = 0; $i = $cantidad_carro; $i++){
-		    		/*$consulta = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = $i");
-		    		$atributo = mysqli_fetch_array($consulta);
-		    		$imagen = $atributo ['imagen'];
-		    		
-		    		$nombre = $atributo ['nombre'];
-		    		$precio = $atributo ['precio'];
+					$atributo_carro = mysqli_fetch_array($consulta_carro);
+					$id_productos = $atributo_carro ['id_producto']
+		    		$consulta_producto = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = $id_productos")
 		    		echo "<div class= 'producto'>
 						<a href='detalles.php?id_producto=$i'>
 							<img src='$imagen'></a><br>
@@ -117,7 +112,7 @@ if(isset($_SESSION['usuario'])){
 							$nombre</a></span><br>
 						<span><strong>Precio: </strong>$precio Bs.S</span><br>
 						<a href='detalles.php?id_producto=$i' class='ver'>Ver producto</a><br>
-						</div>";*/
+						</div>";
 
                 }
                 
