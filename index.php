@@ -14,6 +14,12 @@ $nombre[$i] = $atributo ['nombre'];
 $id[$i] = $atributo ['id_producto'];
 $precio[$i] = $atributo ['precio'];
 }
+if(isset($_SESSION['usuario'])){
+	$nombre_usuario = $_SESSION['usuario'];
+	$consulta = mysqli_query($conexion, "SELECT * FROM persona WHERE nombre_usuario = '$nombre_usuario'");
+	$atributo = mysqli_fetch_array($consulta);
+	$rol = $atributo ['id_permisos'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +92,11 @@ $precio[$i] = $atributo ['precio'];
 				<li>
 					<a href="#"><span class="icon-airplane"></span>Importado</a>
 				</li>
-
+				<?php if (isset($_SESSION['usuario'])): ?>
+					<?php if ($rol=1): ?>
+					<a href="herramientas_admin.php"><span class="icon-envelop"></span>Administrador</a>
+					<?php endif; ?>
+				<?php endif; ?>
 				<li>
 					<a href="contacto.php"><span class="icon-envelop"></span>Contáctanos</a>
 				</li>
