@@ -210,7 +210,7 @@ div.contenido h3 {
 }
 
 div.producto {
-	display: block;
+	display: inline-block;
 	float: left;
 	text-align: center;
 	margin: 20px 30px;
