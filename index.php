@@ -169,8 +169,8 @@ if(isset($_SESSION['usuario'])){
 						<img src="<?php echo $imagen[3]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[3]?>">
 						<?php echo "$nombre[3]"?></a></span><br>
-					<span><strong>Precio: </strong><del><?php echo $precio[3]?> Bs.S</del></span><br>
-					<span><?php echo $precio[3]/2?> Bs.S</span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[3]*2?> Bs.S</del></span><br>
+					<span><?php echo $precio[3]?> Bs.S</span><br>
 					<a href="detalles.php?id_producto=<?php echo $id[3]?>" class="ver">Ver producto</a><br>
 					</div>
 					
@@ -179,8 +179,8 @@ if(isset($_SESSION['usuario'])){
 						<img src="<?php echo $imagen[20]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[20]?>">
 						<?php echo "$nombre[20]"?></a></span><br>
-					<span><strong>Precio: </strong><del><?php echo $precio[20]?> Bs.S</del></span><br>
-					<span><?php echo $precio[20]/2?> Bs.S</span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[20]*2?> Bs.S</del></span><br>
+					<span><?php echo $precio[20]?> Bs.S</span><br>
 					<a href="detalles.php?id_producto=<?php echo $id[20]?>" class="ver">Ver producto</a><br>
 					</div>
 					
@@ -189,8 +189,8 @@ if(isset($_SESSION['usuario'])){
 						<img src="<?php echo $imagen[41]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[41]?>">
 						<?php echo "$nombre[41]"?></a></span><br>
-					<span><strong>Precio: </strong><del><?php echo $precio[41]?> Bs.S</del></span><br>
-					<span><?php echo $precio[41]/2?> Bs.S</span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[41]*2?> Bs.S</del></span><br>
+					<span><?php echo $precio[41]?> Bs.S</span><br>
 					<a href="detalles.php?id_producto=<?php echo $id[41]?>" class="ver">Ver producto</a><br>
 					</div>
 					
@@ -199,8 +199,8 @@ if(isset($_SESSION['usuario'])){
 						<img src="<?php echo $imagen[34]?>"></a><br>
 					<span class="nombre"><a href="detalles.php?id_producto=<?php echo $id[34]?>">
 						<?php echo "$nombre[34]"?></a></span><br>
-					<span><strong>Precio: </strong><del><?php echo $precio[34]?> Bs.S</del></span><br>
-					<span><?php echo $precio[34]/2?> Bs.S</span><br>
+					<span><strong>Precio: </strong><del><?php echo $precio[34]*2?> Bs.S</del></span><br>
+					<span><?php echo $precio[34]?> Bs.S</span><br>
 					<a href="detalles.php?id_producto=<?php echo $id[34]?>" class="ver">Ver producto</a><br>
 					</div>
 				</center>

@@ -41,8 +41,8 @@ if($nombres == "" || $apellidos == "" || $correo == "" || $nombre_usuario == "" 
         echo "tu correo y tu usuario dan cringe";
     }else{
         //Inserta la informacion a la base de datos si se cumplen todos los requisitos 
-        $insertar = "INSERT INTO persona(nombres, apellidos, correo, nombre_usuario, clave) 
-        VALUES ('$nombres', '$apellidos', '$correo', '$nombre_usuario', '$clave')";
+        $insertar = "INSERT INTO persona(nombres, apellidos, correo, nombre_usuario, clave, id_permisos) 
+        VALUES ('$nombres', '$apellidos', '$correo', '$nombre_usuario', '$clave', '2')";
         $enlazar = mysqli_query($conexion, $insertar);
         //Inicia sesion con el usuario registrado
         session_start();

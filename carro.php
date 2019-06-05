@@ -12,7 +12,8 @@ if(isset($_SESSION['usuario'])){
     $consulta_carro = mysqli_query($conexion, "SELECT * FROM carrito WHERE id_persona = '$id_usuario'");
     $cantidad_usuario = mysqli_num_rows($consulta_carro);
     $consulta_tabla_carrito = mysqli_query($conexion, "SELECT * FROM carrito");
-    $cantidad_carro = mysqli_num_rows($consulta_tabla_carrito);
+	$cantidad_carro = mysqli_num_rows($consulta_tabla_carrito);
+	$tope_ciclo = $cantidad_carro +1;
 }else{
     header("location:login.html");
 }
@@ -23,7 +24,7 @@ if(isset($_SESSION['usuario'])){
 <head>
 	<title>Wolmar</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/carro.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/abrir.js"></script>
@@ -100,18 +101,21 @@ if(isset($_SESSION['usuario'])){
 
 	<section class="main">
     <?php
-    echo "$cantidad_carro $cantidad_usuario $id_usuario";
-				for($i = 0; $i = $cantidad_carro; $i++){
+				for($i = 1; $i < $tope_ciclo; $i++){
 					$atributo_carro = mysqli_fetch_array($consulta_carro);
-					$id_productos = $atributo_carro ['id_producto']
-		    		$consulta_producto = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = $id_productos")
+					$referencia = $atributo_carro ['id_producto'];
+					
+					
+					$consulta_producto = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = $referencia");
+					$atributo_producto = mysqli_fetch_array($consulta_producto);
+					$imagen = $atributo_producto ['imagen'];
+					$nombre = $atributo_producto ['nombre'];
+		    		$precio = $atributo_producto ['precio'];
 		    		echo "<div class= 'producto'>
 						<a href='detalles.php?id_producto=$i'>
 							<img src='$imagen'></a><br>
-						<span class='nombre'><a href='detalles.php?id_producto=$i'>
-							$nombre</a></span><br>
+						<span class='nombre'>$nombre</span><br>
 						<span><strong>Precio: </strong>$precio Bs.S</span><br>
-						<a href='detalles.php?id_producto=$i' class='ver'>Ver producto</a><br>
 						</div>";
 
                 }
