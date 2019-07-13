@@ -3,11 +3,9 @@ session_start();
 include 'connect.php';
 $tipo_producto = $_GET['tipo'];
 $consulta_tipo = mysqli_query($conexion,"SELECT * from producto WHERE tipo = '$tipo_producto'");
-$cantidad = mysqli_num_rows($consulta_tipo);
 $atributo = mysqli_fetch_array($consulta_tipo);
-$id = $atributo ['id_producto'];
-$rol = $atributo ['id_permisos'];
-$tope_ciclo = $id + $cantidad;
+$consulta_cantidad = mysqli_query($conexion,"SELECT * from producto");
+$cantidad = mysqli_num_rows($consulta_cantidad);
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +78,7 @@ $tope_ciclo = $id + $cantidad;
 				<li>
 					<a href="#"><span class="icon-airplane"></span>Importado</a>
 				</li>
-				<?php if (isset($_SESSION['usuario']) && ($rol==1)): ?>
+				<?php if (isset($_SESSION['usuario']) && ($_SESSION['rol']==1)): ?>
 					<li><a href="herramientas_admin.php"><span class="icon-user-plus"></span>Administrador</a></li>
 				<?php endif; ?>
 				<li>
@@ -98,15 +96,17 @@ $tope_ciclo = $id + $cantidad;
 		
 			<div class="productos">
 			<?php
-				for($i = $id; $i < $tope_ciclo; $i++){
-		    		$consulta = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = $i");
+				for($i = 1; $i < $cantidad+1; $i++){
+		    		$consulta = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = '$i' /*AND tipo = '$tipo_producto'*/");
 		    		$atributo = mysqli_fetch_array($consulta);
 		    		$imagen = $atributo ['imagen'];
 		    		/*
 		    		echo " <img src='$imagen'> ";
 		    		echo $atributo ['nombre'];
 		       		echo $atributo ['precio'];
-		       		*/
+					   */
+					   
+					   if($atributo ['tipo'] == $tipo_producto){
 		    		$nombre = $atributo ['nombre'];
 		    		$precio = $atributo ['precio'];
 		    		echo "<div class= 'producto'>
@@ -117,6 +117,7 @@ $tope_ciclo = $id + $cantidad;
 						<span><strong>Precio: </strong>$precio Bs.S</span><br>
 						<a href='detalles.php?id_producto=$i' class='ver'>Ver producto</a><br>
 						</div>";
+					   }
 
 				}
 			?>

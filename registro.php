@@ -47,7 +47,7 @@ if($nombres == "" || $apellidos == "" || $correo == "" || $nombre_usuario == "" 
         //Inicia sesion con el usuario registrado
         session_start();
         $_SESSION['usuario'] = $nombre_usuario;
-        header("location:index.php");
+        header("location:inicio_sesion.php");
     }
 }
 ?>

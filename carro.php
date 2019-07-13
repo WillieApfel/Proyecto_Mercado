@@ -3,14 +3,7 @@ session_start();
 include 'connect.php';
 
 if(isset($_SESSION['usuario'])){
-	$nombre_usuario = $_SESSION['usuario'];
-	$consulta = mysqli_query($conexion, "SELECT * FROM persona WHERE nombre_usuario = '$nombre_usuario'");
-	$atributo = mysqli_fetch_array($consulta);
-    $rol = $atributo ['id_permisos'];
-    $id_usuario = $atributo['id_persona'];
-    
-    $consulta_carro = mysqli_query($conexion, "SELECT * FROM carrito WHERE id_persona = '$id_usuario'");
-    $cantidad_usuario = mysqli_num_rows($consulta_carro);
+	
     $consulta_tabla_carrito = mysqli_query($conexion, "SELECT * FROM carrito");
 	$cantidad_carro = mysqli_num_rows($consulta_tabla_carrito);
 	$tope_ciclo = $cantidad_carro +1;
@@ -89,7 +82,7 @@ if(isset($_SESSION['usuario'])){
 				<li>
 					<a href="#"><span class="icon-airplane"></span>Importado</a>
 				</li>
-				<?php if (isset($_SESSION['usuario']) && ($rol==1)): ?>
+				<?php if (isset($_SESSION['usuario']) && ($_SESSION['rol']==1)): ?>
 					<li><a href="herramientas_admin.php"><span class="icon-user-plus"></span>Administrador</a></li>
 				<?php endif; ?>
 				<li>
@@ -102,24 +95,27 @@ if(isset($_SESSION['usuario'])){
 	<section class="main">
     <?php
 				for($i = 1; $i < $tope_ciclo; $i++){
+					$consulta_carro = mysqli_query($conexion, "SELECT * FROM carrito WHERE id_entrada = '$i'
+						AND id_persona = '".$_SESSION['id_persona']."'");
 					$atributo_carro = mysqli_fetch_array($consulta_carro);
+
 					$referencia = $atributo_carro ['id_producto'];
 					
-					
-					$consulta_producto = mysqli_query($conexion, "SELECT * FROM producto WHERE id_producto = $referencia");
+					$consulta_producto = mysqli_query($conexion, "SELECT * FROM producto 
+						WHERE id_producto = '$referencia'");
 					$atributo_producto = mysqli_fetch_array($consulta_producto);
 					$imagen = $atributo_producto ['imagen'];
 					$nombre = $atributo_producto ['nombre'];
-		    		$precio = $atributo_producto ['precio'];
-		    		echo "<div class= 'producto'>
-						<a href='detalles.php?id_producto=$i'>
-							<img src='$imagen'></a><br>
-						<span class='nombre'>$nombre</span><br>
-						<span><strong>Precio: </strong>$precio Bs.S</span><br>
-						</div>";
-
+					$precio = $atributo_producto ['precio'];
+					if($_SESSION['id_persona'] == $atributo_carro ['id_persona']){
+		    			echo "<div class= 'producto'>
+							<a href='detalles.php?id_producto=$i'>
+								<img src='$imagen'></a><br>
+							<span class='nombre'>$nombre</span><br>
+							<span><strong>Precio: </strong>$precio Bs.S</span><br>
+							</div>";
+					}	
                 }
-                
 			?>
 	</section>
 

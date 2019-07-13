@@ -2,7 +2,6 @@
 session_start();
 include 'connect.php';
 $numero_id = $_GET['id_producto'];
-$rol = $atributo ['id_permisos'];
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +74,7 @@ $rol = $atributo ['id_permisos'];
 				<li>
 					<a href="#"><span class="icon-airplane"></span>Importado</a>
 				</li>
-				<?php if (isset($_SESSION['usuario']) && ($rol==1)): ?>
+				<?php if (isset($_SESSION['usuario']) && ($_SESSION['rol']==1)): ?>
 					<li><a href="herramientas_admin.php"><span class="icon-user-plus"></span>Administrador</a></li>
 				<?php endif; ?>
 				<li>
