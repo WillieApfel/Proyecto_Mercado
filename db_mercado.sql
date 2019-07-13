@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2019 a las 20:50:01
+-- Tiempo de generación: 13-07-2019 a las 19:07:46
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -40,10 +40,17 @@ CREATE TABLE `carrito` (
 
 INSERT INTO `carrito` (`id_entrada`, `id_persona`, `id_producto`) VALUES
 (1, 27877535, 1),
-(6, 27877535, 13),
-(7, 27877535, 10),
-(8, 27877535, 2),
-(9, 27877535, 20);
+(2, 27877535, 13),
+(3, 27877535, 10),
+(4, 27877535, 2),
+(5, 27877535, 20),
+(6, 27877535, 21),
+(7, 27488851, 28),
+(8, 27488851, 21),
+(9, 27877535, 28),
+(10, 27171641, 31),
+(11, 27171641, 6),
+(12, 27171641, 10);
 
 -- --------------------------------------------------------
 
@@ -78,7 +85,9 @@ CREATE TABLE `contacto` (
 INSERT INTO `contacto` (`id_mensaje`, `nombre_usuario`, `nombres`, `correo`, `telefono`, `asunto`) VALUES
 (6, '', 'Willie Antonio Manzano Rodríguez', 'williemr17@gmail.com', '04124095885', 'nada funciona'),
 (7, '', 'Willie Antonio Manzano Rodríguez', 'williemr17@gmail.com', '04124095885', 'Soy un Sadico'),
-(8, '', 'Carolina Rodriguez', 'mcarolr29@gmail.com', '04244406924', 'Muy buen servicio.');
+(8, '', 'Carolina Rodriguez', 'mcarolr29@gmail.com', '04244406924', 'Muy buen servicio.'),
+(9, '', 'Carolina Rodriguez', 'mcarolr29@gmail.com', '04244406924', 'me gusta la pagina'),
+(10, '', 'Willie Antonio Manzano Rodriguez', 'williemr17@gmail.com', '04124095885', 'Todo esto es brutal');
 
 -- --------------------------------------------------------
 
@@ -186,8 +195,7 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `tipo`, `imagen`, `precio`, `ca
 (38, 'Alpiste Vicone', 'Mascotas', 'multimedia/img_productos/Mascotas/alpiste.jpg', 2000, 100),
 (39, 'Purina Catchow', 'Mascotas', 'multimedia/img_productos/Mascotas/catchow.jpg', 10000, 100),
 (40, 'Purina Dogchow', 'Mascotas', 'multimedia/img_productos/Mascotas/dogchow.jpg', 10000, 100),
-(41, 'Dogourmet', 'Mascotas', 'multimedia/img_productos/Mascotas/dogourmet.jpg', 10000, 100),
-(43, 'mantequilla', 'Alimentos', 'multimedia/img_productos/Alimentos/AMD-PhenDDDDom-II.png', 10000, 20);
+(41, 'Dogourmet', 'Mascotas', 'multimedia/img_productos/Mascotas/dogourmet.jpg', 10000, 100);
 
 --
 -- Índices para tablas volcadas
@@ -241,13 +249,13 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  MODIFY `id_entrada` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_entrada` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `id_mensaje` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_mensaje` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
@@ -265,7 +273,7 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_producto` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- Restricciones para tablas volcadas
